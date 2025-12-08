@@ -77,7 +77,7 @@ export default function About() {
           </div>
 
           {/* Location & Hours - Dark Luxury Card */}
-          <div className="bg-gradient-to-br from-black via-gray-900 to-black rounded-2xl md:rounded-3xl p-8 md:p-10 lg:p-12 shadow-2xl">
+          <div id="openingstijden" className="bg-gradient-to-br from-black via-gray-900 to-black rounded-2xl md:rounded-3xl p-8 md:p-10 lg:p-12 shadow-2xl">
             <div className="grid lg:grid-cols-2 gap-8 md:gap-12">
               
               {/* Location */}

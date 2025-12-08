@@ -54,7 +54,7 @@ export default function Header() {
               />
             </a>
             
-            <nav className="hidden md:flex items-center space-x-6 lg:space-x-8">
+            <nav className="hidden md:flex items-center space-x-5 lg:space-x-6">
               <a 
                 href="#over-ons" 
                 className={`transition-all duration-300 font-medium tracking-wide whitespace-nowrap text-sm ${
@@ -74,6 +74,26 @@ export default function Header() {
                 }`}
               >
                 Galerij
+              </a>
+              <a 
+                href="#ijssoorten" 
+                className={`transition-all duration-300 font-medium tracking-wide whitespace-nowrap text-sm ${
+                  scrolled 
+                    ? 'text-black hover:text-gold' 
+                    : 'text-white hover:text-gold'
+                }`}
+              >
+                IJssmaken
+              </a>
+              <a 
+                href="#openingstijden" 
+                className={`transition-all duration-300 font-medium tracking-wide whitespace-nowrap text-sm ${
+                  scrolled 
+                    ? 'text-black hover:text-gold' 
+                    : 'text-white hover:text-gold'
+                }`}
+              >
+                Openingstijden
               </a>
               <a 
                 href="tel:+31611318094" 
@@ -161,6 +181,32 @@ export default function Header() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
               </svg>
               Galerij
+            </a>
+            
+            <div className="h-px bg-gray-100 mx-6"></div>
+            
+            <a 
+              href="#ijssoorten"
+              onClick={closeMenu}
+              className="flex items-center px-8 py-4 text-black hover:bg-gold/10 hover:text-gold transition-colors duration-200 font-medium"
+            >
+              <svg className="w-5 h-5 mr-3 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+              </svg>
+              IJssmaken
+            </a>
+            
+            <div className="h-px bg-gray-100 mx-6"></div>
+            
+            <a 
+              href="#openingstijden"
+              onClick={closeMenu}
+              className="flex items-center px-8 py-4 text-black hover:bg-gold/10 hover:text-gold transition-colors duration-200 font-medium"
+            >
+              <svg className="w-5 h-5 mr-3 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              Openingstijden
             </a>
             
             <div className="h-px bg-gray-100 mx-6 mb-4"></div>

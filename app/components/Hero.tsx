@@ -6,15 +6,18 @@ export default function Hero() {
   return (
     <section id="home" className="sticky top-0 h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image - Fixed */}
-      <div className="absolute inset-0">
-        <Image 
-          src="/ijs.png" 
-          alt="Ambachtelijk Ijs"
-          fill
-          className="object-cover"
-          priority
-          quality={100}
-        />
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute inset-0 scale-110">
+          <Image 
+            src="/ijs.png" 
+            alt="Ambachtelijk Ijs"
+            fill
+            className="object-cover"
+            priority
+            quality={100}
+            style={{ objectPosition: 'center' }}
+          />
+        </div>
         {/* Premium Overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/60"></div>
       </div>
