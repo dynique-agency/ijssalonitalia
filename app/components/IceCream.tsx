@@ -91,8 +91,8 @@ export default function IceCream() {
         className="absolute inset-0 opacity-20"
         style={{ 
           backgroundImage: 'url(/background.png)',
-          backgroundSize: 'auto 400px',
-          backgroundPosition: 'center',
+          backgroundSize: 'auto',
+          backgroundPosition: 'top left',
           backgroundRepeat: 'repeat'
         }}
       ></div>

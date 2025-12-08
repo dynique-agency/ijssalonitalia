@@ -24,9 +24,9 @@ export default function Hero() {
         <Image 
           src="/italialogo.png" 
           alt="IJssalon Italia Logo" 
-          width={400}
-          height={200}
-          className="w-64 md:w-80 lg:w-96 h-auto brightness-0 invert drop-shadow-2xl"
+          width={600}
+          height={300}
+          className="w-80 md:w-[32rem] lg:w-[36rem] xl:w-[40rem] h-auto brightness-0 invert drop-shadow-2xl"
           priority
         />
       </div>
