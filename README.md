@@ -45,6 +45,45 @@ npm start
 
 De applicatie draait op: **http://localhost:4321**
 
+## Deployment naar Cloudflare Pages
+
+### Option 1: Via Wrangler CLI
+
+1. Installeer Wrangler (als je dat nog niet hebt):
+```bash
+npm install -g wrangler
+```
+
+2. Login bij Cloudflare:
+```bash
+wrangler login
+```
+
+3. Build de applicatie:
+```bash
+npm run build
+```
+
+4. Deploy naar Cloudflare Pages:
+```bash
+wrangler pages deploy out
+```
+
+### Option 2: Via Cloudflare Dashboard
+
+1. Ga naar [Cloudflare Dashboard](https://dash.cloudflare.com/)
+2. Selecteer "Pages" in de sidebar
+3. Klik op "Create a project"
+4. Verbind je GitHub repository
+5. Configureer:
+   - **Framework preset**: Next.js (Static HTML Export)
+   - **Build command**: `npm run build`
+   - **Build output directory**: `out`
+   - **Root directory**: `/` (root)
+6. Klik "Save and Deploy"
+
+De website wordt automatisch gedeployed bij elke push naar de main branch!
+
 ## Contact Information
 
 - **Telefoon**: +31 6 11318094

@@ -1,0 +1,6 @@
+# Cloudflare Environment Variables
+# Copy this file to .dev.vars and fill in your actual values if needed
+
+# Example variables (currently not needed for this project)
+# NODE_ENV=production
+
