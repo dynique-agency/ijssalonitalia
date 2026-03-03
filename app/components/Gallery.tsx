@@ -32,7 +32,7 @@ export default function Gallery() {
   ]
 
   return (
-    <section id="galerij" className="relative z-10 py-16 md:py-24 lg:py-32 bg-white">
+    <section id="galerij" className="relative py-16 md:py-24 lg:py-32 bg-white">
       <div className="container mx-auto px-4 md:px-8 lg:px-12">
         <div className="text-center mb-10 md:mb-14 max-w-3xl mx-auto">
           <h2 className="font-cormorant text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold text-black mb-4 md:mb-6 leading-[1.1] tracking-tight">

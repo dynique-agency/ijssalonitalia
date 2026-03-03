@@ -5,7 +5,7 @@ import Image from 'next/image'
 
 export default function Footer() {
   return (
-    <footer className="relative z-10 bg-gradient-to-br from-black via-gray-900 to-black text-white py-12 md:py-16 lg:py-20">
+    <footer className="relative bg-gradient-to-br from-black via-gray-900 to-black text-white py-12 md:py-16 lg:py-20">
       <div className="container mx-auto px-4 md:px-8 lg:px-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10 lg:gap-12 max-w-7xl mx-auto mb-10 md:mb-12">
           {/* Brand */}

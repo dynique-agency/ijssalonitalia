@@ -4,7 +4,7 @@ import Image from 'next/image'
 
 export default function History() {
   return (
-    <section className="relative z-10 py-16 md:py-24 bg-gray-50">
+    <section id="geschiedenis" className="relative py-16 md:py-24 bg-gray-50">
       <div className="container mx-auto px-4 md:px-8 lg:px-12">
         <div className="max-w-6xl mx-auto">
           
@@ -71,6 +71,9 @@ export default function History() {
     </section>
   )
 }
+
+
+
 
 
 

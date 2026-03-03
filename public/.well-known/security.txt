@@ -1,0 +1,7 @@
+Contact: mailto:ijssalonitalia@me.com
+Expires: 2026-12-31T23:59:59.000Z
+Preferred-Languages: nl, en
+Canonical: https://www.ijssalonitaliavaals.nl/.well-known/security.txt
+
+
+

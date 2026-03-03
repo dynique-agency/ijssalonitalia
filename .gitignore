@@ -36,6 +36,15 @@ next-env.d.ts
 # Cloudflare
 .wrangler/
 
+# Security
+*.key
+*.pem
+*.cert
+*.crt
+secrets/
+.env.production.local
+.env.development.local
+
 
 
 
