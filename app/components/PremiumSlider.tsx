@@ -3,10 +3,10 @@
 import Image from 'next/image'
 
 const premiumImages = [
-  { src: '/slider-koffie.webp',          alt: 'IJskoffie',        label: 'Koffie specialiteit' },
+  { src: '/slider-koffie.webp',          alt: 'IJskoffie',        label: 'IJskoffie' },
   { src: '/slider-sundae-aardbei.webp',  alt: 'Aardbei sundae',   label: 'Aardbei sundae' },
   { src: '/slider-spaghettiijs.webp',    alt: 'Spaghettiijs',     label: 'Spaghettiijs' },
-  { src: '/slider-sundae-pistache.webp', alt: 'Pistache sundae',  label: 'Pistache sundae' },
+  { src: '/slider-sundae-pistache.webp', alt: 'Costanza Coupe',   label: 'Costanza Coupe' },
   { src: '/slider-sundae-fruit.webp',    alt: 'Fruit sundae',     label: 'Fruit sundae' },
 ]
 

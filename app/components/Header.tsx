@@ -62,9 +62,9 @@ export default function Header() {
               <Image
                 src="/italialogo.webp"
                 alt="IJssalon Italia Logo"
-                width={140}
-                height={70}
-                className={`h-8 md:h-10 w-auto transition-all duration-500 hover:scale-105 ${
+                width={220}
+                height={110}
+                className={`h-14 md:h-14 w-auto transition-all duration-500 hover:scale-105 ${
                   scrolled ? 'brightness-0' : ''
                 }`}
                 priority
