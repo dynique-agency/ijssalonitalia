@@ -20,8 +20,8 @@ export const metadata: Metadata = {
   title: 'IJssalon Italia Vaals - Ambachtelijk ijs & Italiaanse gastvrijheid',
   description: 'Een authentiek familiebedrijf waar passie voor ijs en gastvrijheid centraal staan. Geniet van vers bereid ambachtelijk ijs, Italiaanse koffie en gebak in het hart van Vaals.',
   icons: {
-    icon: '/italialogo.png',
-    apple: '/italialogo.png',
+    icon: '/italialogo.webp',
+    apple: '/italialogo.webp',
   },
 }
 

@@ -11,11 +11,11 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <Image 
-              src="/italialogo.png" 
+              src="/italialogo.webp" 
               alt="IJssalon Italia Logo" 
               width={160}
               height={80}
-              className="h-12 md:h-14 w-auto mb-5 md:mb-6 brightness-200"
+              className="h-12 md:h-14 w-auto mb-5 md:mb-6 drop-shadow-lg"
             />
             <p className="text-gray-400 leading-relaxed text-sm md:text-base font-light">
               {businessData.business_identity.slogan}
@@ -45,16 +45,21 @@ export default function Footer() {
           
           {/* Opening Hours */}
           <div>
-            <h3 className="text-gold font-cormorant text-xl md:text-2xl font-semibold mb-4 md:mb-5">Openingstijden</h3>
+            <h3 className="text-gold font-cormorant text-xl md:text-2xl font-semibold mb-2">Openingstijden</h3>
+            <p className="text-gray-600 text-xs mb-4 flex items-center gap-1.5">
+              <svg className="w-3 h-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" /></svg>
+              Weersafhankelijk
+            </p>
             <div className="space-y-4 text-gray-400 text-sm md:text-base font-light">
               <div>
-                <p className="text-white font-medium mb-1">Zomer (apr - sep)</p>
-                <p>Dagelijks 11:00 - 22:00</p>
+                <p className="text-white font-medium mb-2">Zomer</p>
+                <p>10:00 – 19:00 &nbsp;·&nbsp; IJssalon open</p>
+                <p>19:00 – 22:00 &nbsp;·&nbsp; Alleen meenemen</p>
+                <p className="text-xs mt-1.5 text-gray-500">Maandag vanaf 11:00</p>
               </div>
               <div>
-                <p className="text-white font-medium mb-1">Winter (okt - mrt)</p>
-                <p>Dagelijks 11:00 - 18:00</p>
-                <p className="text-red-400 text-xs mt-1.5 font-medium">Gesloten in januari</p>
+                <p className="text-white font-medium mb-2">Winter</p>
+                <p>Dagelijks 11:00 – 18:00</p>
               </div>
             </div>
           </div>

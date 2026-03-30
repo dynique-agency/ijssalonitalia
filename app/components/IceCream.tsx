@@ -12,7 +12,8 @@ export default function IceCream() {
     '🥚': 'Ei',
     '🥃': 'Alcohol',
     '🥜': 'Pinda',
-    '🍓': 'Fruit'
+    '🍓': 'Fruit',
+    '🌿': 'Zonder melk'
   }
 
   const milkFlavors = [
@@ -34,7 +35,7 @@ export default function IceCream() {
     { name: "Alpen liebe", allergens: "" },
     { name: "Sesam", allergens: "" },
     { name: "Mokka", allergens: "" },
-    { name: "Dark chocolade", allergens: "" },
+    { name: "Dark chocolade", allergens: "", dairyFree: true },
     { name: "Pistacchio", allergens: "🌰" },
     { name: "Oreo", allergens: "🌾" },
     { name: "Giotto", allergens: "🌰" },
@@ -90,7 +91,7 @@ export default function IceCream() {
       <div 
         className="absolute inset-0 opacity-20"
         style={{ 
-          backgroundImage: 'url(/background.png)',
+          backgroundImage: 'url(/background.webp)',
           backgroundSize: 'auto',
           backgroundPosition: 'top left',
           backgroundRepeat: 'repeat'
@@ -173,11 +174,16 @@ export default function IceCream() {
                         <span className="text-xs md:text-sm text-gray-800 font-medium group-hover:text-gold transition-colors">
                           {flavor.name}
                         </span>
-                        {flavor.allergens && (
-                          <span className="text-sm md:text-base ml-2">
-                            {flavor.allergens}
-                          </span>
-                        )}
+                        <span className="flex items-center gap-1 ml-2 flex-shrink-0">
+                          {flavor.dairyFree && (
+                            <span className="text-sm" title="Zonder melk">🌿</span>
+                          )}
+                          {flavor.allergens && (
+                            <span className="text-sm md:text-base">
+                              {flavor.allergens}
+                            </span>
+                          )}
+                        </span>
                       </div>
                     ))}
                   </div>
@@ -241,7 +247,7 @@ export default function IceCream() {
           {/* Compact Allergen Legend */}
           <div className="mt-8 md:mt-10 bg-gradient-to-br from-black to-gray-900 rounded-2xl p-5 md:p-6">
             <h4 className="font-cormorant text-lg md:text-xl font-semibold text-gold mb-4 text-center">
-              Allergenen
+              Legenda
             </h4>
             <div className="flex flex-wrap justify-center gap-3 md:gap-4">
               {Object.entries(allergenLegend).map(([emoji, description]) => (

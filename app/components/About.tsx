@@ -24,7 +24,7 @@ export default function About() {
           <div className="grid md:grid-cols-2 gap-6 md:gap-8 mb-12 md:mb-16">
             <div className="relative rounded-2xl overflow-hidden shadow-xl group h-64 md:h-80">
               <Image 
-                src="/koffiemetapfelstrudel.png"
+                src="/koffiemetapfelstrudel.webp"
                 alt="Koffie met Apfelstrudel"
                 width={600}
                 height={600}
@@ -41,7 +41,7 @@ export default function About() {
 
             <div className="relative rounded-2xl overflow-hidden shadow-xl group h-64 md:h-80">
               <Image 
-                src="/caramelkoffie.png"
+                src="/caramelkoffie.webp"
                 alt="Specialiteiten Koffie"
                 width={600}
                 height={600}
@@ -123,37 +123,55 @@ export default function About() {
 
               {/* Opening Hours */}
               <div>
-                <h3 className="font-cormorant text-2xl md:text-3xl font-semibold text-gold mb-6">Openingstijden</h3>
+                <h3 className="font-cormorant text-2xl md:text-3xl font-semibold text-gold mb-2">Openingstijden</h3>
+                <p className="text-gray-500 text-xs mb-5 flex items-center gap-1.5">
+                  <svg className="w-3 h-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" /></svg>
+                  Openingstijden zijn weersafhankelijk
+                </p>
                 <div className="space-y-5">
                   {/* Summer */}
-                  <div className="bg-white/5 rounded-xl p-5 border border-gold/20">
-                    <div className="flex items-center justify-between mb-3">
-                      <div className="flex items-center gap-2">
-                        <svg className="w-4 h-4 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
-                        </svg>
-                        <span className="text-white font-medium text-sm md:text-base">Zomer</span>
-                      </div>
-                      <span className="text-gray-400 text-xs">{businessData.opening_hours.season_summer.period}</span>
+                  <div className="rounded-2xl overflow-hidden border border-gold/20">
+                    {/* Header */}
+                    <div className="flex items-center gap-2.5 px-5 py-3.5 bg-white/5 border-b border-gold/10">
+                      <svg className="w-4 h-4 text-gold flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                      </svg>
+                      <span className="text-white font-semibold text-sm tracking-wide uppercase">Zomer</span>
                     </div>
-                    <p className="text-gold font-semibold text-lg md:text-xl">11:00 - 22:00</p>
-                    <p className="text-gray-400 text-xs mt-1">Laatste bestelling: 21:45</p>
+
+                    {/* Two-phase blocks */}
+                    <div className="grid grid-cols-2 divide-x divide-gold/10">
+                      <div className="px-4 py-5 text-center bg-gradient-to-b from-gold/10 to-gold/5">
+                        <p className="text-gold font-cormorant font-semibold text-2xl md:text-3xl leading-none">10:00 – 19:00</p>
+                        <p className="text-gray-300 text-xs mt-2 tracking-wide uppercase">IJssalon open</p>
+                      </div>
+                      <div className="px-4 py-5 text-center bg-gradient-to-b from-gold/10 to-gold/5">
+                        <p className="text-gold font-cormorant font-semibold text-2xl md:text-3xl leading-none">19:00 – 22:00</p>
+                        <p className="text-gray-300 text-xs mt-2 tracking-wide uppercase">Alleen meenemen</p>
+                      </div>
+                    </div>
+
+                    {/* Monday note */}
+                    <div className="flex items-center justify-center gap-2 px-5 py-2.5 bg-white/5 border-t border-gold/10">
+                      <div className="w-1 h-1 rounded-full bg-gold/60" />
+                      <p className="text-gold/80 text-sm font-medium">Maandag vanaf 11:00</p>
+                      <div className="w-1 h-1 rounded-full bg-gold/60" />
+                    </div>
                   </div>
 
                   {/* Winter */}
-                  <div className="bg-white/5 rounded-xl p-5 border border-gold/20">
-                    <div className="flex items-center justify-between mb-3">
-                      <div className="flex items-center gap-2">
-                        <svg className="w-4 h-4 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
-                        </svg>
-                        <span className="text-white font-medium text-sm md:text-base">Winter</span>
-                      </div>
-                      <span className="text-gray-400 text-xs">{businessData.opening_hours.season_winter.period}</span>
+                  <div className="rounded-2xl overflow-hidden border border-white/10">
+                    {/* Header */}
+                    <div className="flex items-center gap-2.5 px-5 py-3.5 bg-white/5 border-b border-white/10">
+                      <svg className="w-4 h-4 text-gold flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                      </svg>
+                      <span className="text-white font-semibold text-sm tracking-wide uppercase">Winter</span>
                     </div>
-                    <p className="text-gold font-semibold text-lg md:text-xl">11:00 - 18:00</p>
-                    <p className="text-gray-400 text-xs mt-1">Laatste bestelling: 17:45</p>
-                    <p className="text-red-400 text-xs mt-2 font-medium">Gesloten in januari</p>
+                    <div className="px-4 py-5 text-center bg-white/[0.03]">
+                      <p className="text-gold font-cormorant font-semibold text-2xl md:text-3xl leading-none">11:00 – 18:00</p>
+                      <p className="text-gray-400 text-xs mt-2 tracking-wide uppercase">Dagelijks open</p>
+                    </div>
                   </div>
                 </div>
               </div>

@@ -60,12 +60,12 @@ export default function Header() {
           <div className="flex items-center justify-between">
             <a href="#home" className="flex items-center flex-shrink-0">
               <Image
-                src="/italialogo.png"
+                src="/italialogo.webp"
                 alt="IJssalon Italia Logo"
                 width={140}
                 height={70}
                 className={`h-8 md:h-10 w-auto transition-all duration-500 hover:scale-105 ${
-                  scrolled ? 'brightness-100' : 'brightness-0 invert'
+                  scrolled ? 'brightness-0' : ''
                 }`}
                 priority
               />

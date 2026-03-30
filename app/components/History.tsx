@@ -22,7 +22,7 @@ export default function History() {
             {/* Compact Vintage Photo */}
             <div className="relative rounded-2xl overflow-hidden shadow-xl group">
               <Image 
-                src="/ijsalonvroeger.jpg"
+                src="/ijsalonvroeger.webp"
                 alt="IJssalon Italia 1969"
                 width={600}
                 height={400}
@@ -53,7 +53,7 @@ export default function History() {
 
               <div className="bg-gradient-to-br from-gold/10 to-gold/5 border-l-4 border-gold rounded-r-xl p-6">
                 <p className="text-gray-800 text-base md:text-lg leading-relaxed italic font-light mb-3">
-                  "In 2005 namen wij, Wally en Roger, het stokje over. We zijn trots om deze mooie traditie voort te zetten, met dezelfde toewijding en passie."
+                  "In 2003 namen wij, Wally en Roger, het stokje over. We zijn trots om deze mooie traditie voort te zetten, met dezelfde toewijding en passie."
                 </p>
                 <p className="text-gold font-semibold text-sm">
                   — Wally en Roger

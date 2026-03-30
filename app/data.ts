@@ -7,7 +7,7 @@ export const businessData = {
     founded_year: 1969,
     owners: {
       founders: "Odone en Giovanna Bez",
-      current_owners: "Wally en Roger (sinds 2005)"
+      current_owners: "Wally en Roger (sinds 2003)"
     }
   },
   contact_info: {
@@ -24,32 +24,34 @@ export const businessData = {
   },
   opening_hours: {
     season_summer: {
-      period: "1 april t/m 30 september",
-      ordering_deadline: "21:45",
       schedule: [
         {
-          days: "Maandag - Zondag",
+          days: "Dinsdag - Zondag",
+          open: "10:00",
+          close: "22:00"
+        },
+        {
+          days: "Maandag",
           open: "11:00",
           close: "22:00"
         }
-      ]
+      ],
+      salon_note: "IJssalon open tot 19:00",
+      takeaway_note: "Meenemen mogelijk tot 22:00"
     },
     season_winter: {
-      period: "1 oktober t/m 31 maart",
-      ordering_deadline: "17:45",
       schedule: [
         {
           days: "Maandag - Zondag",
           open: "11:00",
           close: "18:00"
         }
-      ],
-      closure_note: "Gesloten in januari."
+      ]
     }
   },
   history: {
     title: "Onze Geschiedenis",
-    content: "IJssalon Italia is een echt familiebedrijf, opgericht in 1969 door Odone en Giovanna Bez. Zij hadden een grote passie voor twee dingen: ijs en gastvrijheid. In 2005 is het bedrijf overgenomen door Wally en haar man Roger. Samen zetten zij de passie voort met ijs van hoge kwaliteit en liefde voor de klant. Koffie en ijs zoals u het in Italië kent."
+    content: "IJssalon Italia is een echt familiebedrijf, opgericht in 1969 door Odone en Giovanna Bez. Zij hadden een grote passie voor twee dingen: ijs en gastvrijheid. In 2003 is het bedrijf overgenomen door Wally en haar man Roger. Samen zetten zij de passie voort met ijs van hoge kwaliteit en liefde voor de klant. Koffie en ijs zoals u het in Italië kent."
   }
 }
 

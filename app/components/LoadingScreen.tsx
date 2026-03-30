@@ -57,15 +57,15 @@ export default function LoadingScreen() {
     <div
       ref={overlayRef}
       className="fixed inset-0 z-[100] flex flex-col items-center justify-center"
-      style={{ backgroundColor: '#F5F0EB' }}
+      style={{ backgroundColor: '#000000' }}
     >
       <div ref={logoRef} className="flex flex-col items-center opacity-0">
         <Image
-          src="/italialogo.png"
+          src="/italialogo.webp"
           alt="IJssalon Italia Logo"
           width={300}
           height={150}
-          className="w-48 md:w-64 lg:w-72 h-auto"
+          className="w-48 md:w-64 lg:w-72 h-auto drop-shadow-2xl"
           priority
         />
       </div>

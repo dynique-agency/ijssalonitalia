@@ -12,7 +12,7 @@ export default function Hero() {
       <div className="absolute inset-0 overflow-hidden transform-gpu">
         <div className="absolute -inset-[10%] transform-gpu will-change-transform">
           <Image
-            src="/ijs.png"
+            src="/ijs.webp"
             alt="Ambachtelijk Ijs"
             fill
             className="object-cover transform-gpu"
@@ -27,11 +27,11 @@ export default function Hero() {
       {/* Logo */}
       <div className="relative z-10 transform-gpu">
         <Image
-          src="/italialogo.png"
+          src="/italialogo.webp"
           alt="IJssalon Italia Logo"
           width={600}
           height={300}
-          className="w-80 md:w-[32rem] lg:w-[36rem] xl:w-[40rem] h-auto brightness-0 invert drop-shadow-2xl"
+          className="w-80 md:w-[32rem] lg:w-[36rem] xl:w-[40rem] h-auto drop-shadow-2xl"
           priority
           sizes="(max-width: 768px) 320px, (max-width: 1024px) 512px, 640px"
         />

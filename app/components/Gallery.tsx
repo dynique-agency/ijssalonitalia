@@ -5,27 +5,27 @@ import Image from 'next/image'
 export default function Gallery() {
   const galleryImages = [
     {
-      src: "/ijs.png",
+      src: "/ijs.webp",
       alt: "Ambachtelijk Ijs",
       caption: "Verse ijssmaken, dagelijks bereid"
     },
     {
-      src: "/spaghettiijs.png",
+      src: "/spaghettiijs.webp",
       alt: "Spaghetti Ijs",
       caption: "Ons beroemde spaghetti-ijs"
     },
     {
-      src: "/koffiemetapfelstrudel.png",
+      src: "/koffiemetapfelstrudel.webp",
       alt: "Koffie met Apfelstrudel",
       caption: "Perfecte espresso met apfelstrudel"
     },
     {
-      src: "/caramelkoffie.png",
+      src: "/caramelkoffie.webp",
       alt: "Caramel Koffie Specialiteit",
       caption: "Huisgemaakte specialiteiten"
     },
     {
-      src: "/ijsalonvroeger.jpg",
+      src: "/ijsalonvroeger.webp",
       alt: "IJssalon Italia 1969",
       caption: "Onze roots, sinds 1969"
     }
@@ -151,17 +151,6 @@ export default function Gallery() {
           </div>
         </div>
         
-        <div className="mt-10 md:mt-14 text-center">
-          <p className="text-gray-700 text-base md:text-lg mb-6 max-w-2xl mx-auto font-light">
-            Kom langs en ervaar de sfeer
-          </p>
-          <a 
-            href="tel:+31611318094" 
-            className="inline-block bg-gold hover:bg-gold-dark text-white px-10 md:px-12 py-3.5 md:py-4 rounded-full transition-all duration-300 font-semibold text-sm md:text-base tracking-wide uppercase shadow-xl hover:shadow-2xl hover:scale-105"
-          >
-            Reserveer Nu
-          </a>
-        </div>
       </div>
     </section>
   )
