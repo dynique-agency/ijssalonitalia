@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Cormorant_Garamond, Inter } from 'next/font/google'
 import './globals.css'
+import CookieConsent from './components/CookieConsent'
 
 const cormorant = Cormorant_Garamond({ 
   subsets: ['latin'],
@@ -32,7 +33,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="nl" className={`${cormorant.variable} ${inter.variable}`}>
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        {children}
+        <CookieConsent />
+      </body>
     </html>
   )
 }

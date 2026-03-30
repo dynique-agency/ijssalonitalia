@@ -2,6 +2,7 @@
 
 import { businessData } from '../data'
 import Image from 'next/image'
+import Link from 'next/link'
 
 export default function Footer() {
   return (
@@ -67,8 +68,15 @@ export default function Footer() {
         
         {/* Bottom Bar */}
         <div className="border-t border-gray-800 pt-6 md:pt-8 text-center text-gray-500 text-xs md:text-sm font-light">
-          <p className="mb-1.5">&copy; {new Date().getFullYear()} IJssalon Italia Vaals. Alle rechten voorbehouden.</p>
-          <p>Sinds {businessData.business_identity.founded_year} - Een familiebedrijf met passie</p>
+          <p className="mb-3">&copy; {new Date().getFullYear()} IJssalon Italia Vaals. Alle rechten voorbehouden.</p>
+          <p className="mb-4">Sinds {businessData.business_identity.founded_year} — Een familiebedrijf met passie</p>
+          <div className="flex items-center justify-center gap-4 flex-wrap text-xs text-gray-600">
+            <Link href="/privacy" className="hover:text-gold transition-colors duration-300">Privacybeleid</Link>
+            <span className="text-gray-800">·</span>
+            <Link href="/cookies" className="hover:text-gold transition-colors duration-300">Cookiebeleid</Link>
+            <span className="text-gray-800">·</span>
+            <Link href="/voorwaarden" className="hover:text-gold transition-colors duration-300">Algemene Voorwaarden</Link>
+          </div>
         </div>
       </div>
     </footer>
