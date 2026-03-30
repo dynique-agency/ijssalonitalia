@@ -77,6 +77,23 @@ export default function Footer() {
             <span className="text-gray-800">·</span>
             <Link href="/voorwaarden" className="hover:text-gold transition-colors duration-300">Algemene Voorwaarden</Link>
           </div>
+
+          {/* Dynique credit */}
+          <div className="mt-8 pt-6 border-t border-gray-900 flex items-center justify-center gap-2.5">
+            <div className="h-px w-8 bg-gradient-to-r from-transparent to-gray-700" />
+            <p className="text-[11px] tracking-[0.18em] text-gray-700 uppercase font-light">
+              Designed &amp; Realised by{' '}
+              <a
+                href="https://dynique.nl"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-500 hover:text-gold transition-colors duration-500"
+              >
+                Dynique.nl
+              </a>
+            </p>
+            <div className="h-px w-8 bg-gradient-to-l from-transparent to-gray-700" />
+          </div>
         </div>
       </div>
     </footer>
