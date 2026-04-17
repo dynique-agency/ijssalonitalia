@@ -83,7 +83,7 @@ export default function AnnouncementModal() {
             {/* Title */}
             <h2 className="font-cormorant text-3xl md:text-4xl font-semibold text-white leading-tight mb-3">
               Goed nieuws!<br />
-              <span className="text-[#c9a84c]">Vanaf 24 april</span>
+              <span className="text-[#c9a84c]">Vanaf de zomer</span>
             </h2>
             <p className="text-gray-400 text-sm md:text-base leading-relaxed font-light">
               We hebben onze openingstijden en service aangepast zodat jullie optimaal kunnen genieten van al ons lekkers. Of je nu uitgebreid wilt zitten of snel iets wilt ophalen, we staan voor je klaar!
