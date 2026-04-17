@@ -86,7 +86,7 @@ export default function AnnouncementModal() {
               <span className="text-[#c9a84c]">Vanaf 24 april</span>
             </h2>
             <p className="text-gray-400 text-sm md:text-base leading-relaxed font-light">
-              We hebben onze openingstijden en service aangepast zodat u optimaal kunt genieten. Of u nu uitgebreid wilt zitten of snel iets wilt meenemen — wij staan voor u klaar.
+              We hebben onze openingstijden en service aangepast zodat jullie optimaal kunnen genieten van al ons lekkers. Of je nu uitgebreid wilt zitten of snel iets wilt ophalen, we staan voor je klaar!
             </p>
           </div>
 
@@ -94,47 +94,35 @@ export default function AnnouncementModal() {
           <div className="px-7 pb-5 grid grid-cols-2 gap-3">
             {/* Service aan tafel */}
             <div className="bg-white/[0.04] border border-white/10 rounded-2xl p-4 hover:border-[#c9a84c]/20 transition-colors duration-300">
-              <div className="w-8 h-8 rounded-full bg-[#c9a84c]/10 flex items-center justify-center mb-3">
-                <svg className="w-4 h-4 text-[#c9a84c]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
-                </svg>
-              </div>
+              <span className="text-2xl mb-3 block">🕒</span>
               <p className="text-white text-sm font-medium mb-1">Bediening aan tafel</p>
               <p className="text-[#c9a84c] font-cormorant text-xl font-semibold">tot 19:00</p>
+              <p className="text-gray-500 text-xs mt-1.5 leading-relaxed">Tot 19:00 uur bedienen we je met liefde aan tafel.</p>
             </div>
 
             {/* Take-away */}
             <div className="bg-white/[0.04] border border-white/10 rounded-2xl p-4 hover:border-[#c9a84c]/20 transition-colors duration-300">
-              <div className="w-8 h-8 rounded-full bg-[#c9a84c]/10 flex items-center justify-center mb-3">
-                <svg className="w-4 h-4 text-[#c9a84c]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-              </div>
+              <span className="text-2xl mb-3 block">🛍️</span>
               <p className="text-white text-sm font-medium mb-1">Alleen meenemen</p>
               <p className="text-[#c9a84c] font-cormorant text-xl font-semibold">19:00 – 21:45</p>
+              <p className="text-gray-500 text-xs mt-1.5 leading-relaxed">Uitsluitend afhaal, geen bediening aan tafel.</p>
             </div>
           </div>
 
           {/* Ice cream highlight */}
           <div className="mx-7 mb-5 rounded-2xl border border-[#c9a84c]/15 bg-gradient-to-r from-[#c9a84c]/5 to-transparent p-4 flex items-start gap-4">
-            <div className="w-9 h-9 rounded-xl bg-[#c9a84c]/10 flex items-center justify-center flex-shrink-0">
-              <svg className="w-5 h-5 text-[#c9a84c]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 2C8.686 2 6 4.686 6 8c0 2.123 1.037 4.014 2.625 5.175L9 18h6l.375-4.825C16.963 12.014 18 10.123 18 8c0-3.314-2.686-6-6-6z" />
-              </svg>
-            </div>
+            <span className="text-2xl flex-shrink-0 mt-0.5">🍨</span>
             <div>
-              <p className="text-white text-sm font-medium mb-0.5">Coupes ook als take-away</p>
-              <p className="text-gray-500 text-xs leading-relaxed">Al onze ijscoupes zijn nu ook beschikbaar voor meenemen. Thuis, onderweg of in het park genieten van uw favoriet.</p>
+              <p className="text-white text-sm font-medium mb-0.5">Extra lekker nieuws!</p>
+              <p className="text-gray-400 text-xs leading-relaxed">Al onze ijscoupes zijn nu ook beschikbaar voor take-away. Thuis, onderweg of in het park genieten van je favoriete ijscreatie!</p>
             </div>
           </div>
 
           {/* Footer */}
           <div className="border-t border-white/8 px-7 py-4 flex items-center justify-between gap-4 bg-white/[0.02]">
             <div className="flex items-center gap-2.5">
-              <svg className="w-4 h-4 text-[#c9a84c]/60 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-              <p className="text-gray-500 text-xs">Op maandag openen wij om <span className="text-gray-300">11:00</span></p>
+              <span className="text-base flex-shrink-0">📅</span>
+              <p className="text-gray-500 text-xs">Op maandag openen we om <span className="text-gray-300">11:00 uur</span></p>
             </div>
 
             <button
