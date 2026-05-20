@@ -4,6 +4,7 @@ import About from './components/About'
 import ToGo from './components/ToGo'
 import PremiumSlider from './components/PremiumSlider'
 import Gallery from './components/Gallery'
+import IceCreamFacts from './components/IceCreamFacts'
 import IceCream from './components/IceCream'
 import History from './components/History'
 import Footer from './components/Footer'
@@ -22,6 +23,7 @@ export default function Home() {
         <PremiumSlider />
         <About />
         <Gallery />
+        <IceCreamFacts />
         <IceCream />
         <History />
         <Footer />
