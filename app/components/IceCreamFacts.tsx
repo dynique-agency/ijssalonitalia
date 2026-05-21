@@ -88,10 +88,10 @@ function TabIcon({ index, color, active }: { index: number; color: string; activ
     <svg width="28" height="28" viewBox="0 0 24 24" fill="none"
       stroke={color} strokeOpacity={opacity} strokeWidth={sw} strokeLinecap="round" strokeLinejoin="round"
       style={{ transition: 'all 0.4s ease' }}>
-      <path d="M12 21.5v-4.5" />
-      <path d="M8 17h8v-10a4 4 0 1 0 -8 0v10" />
-      <path d="M8 10.5l8 -3.5" />
-      <path d="M8 14.5l8 -3.5" />
+      <path d="M8 21h8" />
+      <path d="M12 16v5" />
+      <path d="M17 5l1 6c0 3.012 -2.686 5 -6 5s-6 -1.988 -6 -5l1 -6" />
+      <path d="M7 5a5 2 0 1 0 10 0a5 2 0 1 0 -10 0" />
     </svg>
   )
   return (
@@ -147,7 +147,7 @@ export default function IceCreamFacts() {
   const type = ICE_TYPES[active]
 
   return (
-    <section ref={sectionRef} id="ijssoorten-uitleg" className="relative bg-[#080808] overflow-hidden">
+    <section ref={sectionRef} id="ijssoorten-uitleg" className="relative bg-[#0f0f0f] overflow-hidden">
 
       <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-gold/40 to-transparent" />
 
@@ -166,7 +166,7 @@ export default function IceCreamFacts() {
         <div ref={headerRef} className="mb-12 md:mb-16 opacity-0">
           <div className="flex items-center gap-4 mb-5">
             <div className="h-px w-8 bg-gradient-to-r from-transparent to-gold/50" />
-            <span className="text-gold/50 text-[9px] tracking-[0.45em] uppercase font-light">Weetjes over schepijs</span>
+            <span className="text-gold/70 text-[9px] tracking-[0.45em] uppercase font-light">Weetjes over schepijs</span>
           </div>
           <h2 className="font-cormorant text-4xl sm:text-5xl md:text-6xl font-semibold text-white leading-[1.05] tracking-tight mb-4">
             Wat is het verschil tussen<br />
@@ -174,7 +174,7 @@ export default function IceCreamFacts() {
               roomijs, gelato en sorbet?
             </em>
           </h2>
-          <p className="text-gray-600 text-sm md:text-base font-light max-w-lg leading-relaxed">
+          <p className="text-gray-400 text-sm md:text-base font-light max-w-lg leading-relaxed">
             Ze lijken op elkaar, maar verschillen qua samenstelling, smaakbeleving en serveertemperatuur.
           </p>
         </div>
@@ -202,14 +202,14 @@ export default function IceCreamFacts() {
 
               <span
                 className="font-cormorant text-lg md:text-2xl font-semibold transition-all duration-400 leading-none"
-                style={{ color: active === i ? t.color : 'rgba(255,255,255,0.3)' }}
+                style={{ color: active === i ? t.color : 'rgba(255,255,255,0.55)' }}
               >
                 {t.name}
               </span>
 
               <span
                 className="text-[9px] tracking-[0.2em] uppercase font-light hidden md:block transition-opacity duration-300"
-                style={{ color: active === i ? `${t.color}70` : 'rgba(255,255,255,0.12)' }}
+                style={{ color: active === i ? `${t.color}90` : 'rgba(255,255,255,0.30)' }}
               >
                 {t.tagline}
               </span>
@@ -221,7 +221,7 @@ export default function IceCreamFacts() {
         <div
           ref={panelRef}
           className="rounded-b-2xl overflow-hidden"
-          style={{ backgroundColor: '#111111', borderTop: `1px solid ${type.color}20` }}
+          style={{ backgroundColor: '#181818', borderTop: `1px solid ${type.color}35` }}
         >
           {/* Ambient glow */}
           <div
@@ -251,7 +251,7 @@ export default function IceCreamFacts() {
                     </span>
                     <div className="flex flex-col gap-0.5 pt-3">
                       <span className="font-cormorant text-2xl font-light" style={{ color: `${type.color}45` }}>°C</span>
-                      <span className="text-[8px] text-gray-700 tracking-[0.2em] uppercase">serveert op</span>
+                      <span className="text-[8px] text-gray-500 tracking-[0.2em] uppercase">serveert op</span>
                     </div>
                   </div>
                 ) : (
@@ -270,7 +270,7 @@ export default function IceCreamFacts() {
               {/* Fat bar */}
               <div className="mb-8">
                 <div className="flex items-center justify-between mb-2.5">
-                  <span className="text-gray-600 text-[9px] tracking-[0.3em] uppercase">Vetgehalte</span>
+                  <span className="text-gray-400 text-[9px] tracking-[0.3em] uppercase">Vetgehalte</span>
                   <span className="text-xs font-light" style={{ color: `${type.color}80` }}>{type.fatLabel}</span>
                 </div>
                 <div className="h-[1px] bg-white/[0.05] relative rounded-full overflow-hidden">
@@ -286,7 +286,7 @@ export default function IceCreamFacts() {
               </div>
 
               {/* Description */}
-              <p className="text-gray-500 text-sm md:text-[15px] leading-relaxed font-light">
+              <p className="text-gray-300 text-sm md:text-[15px] leading-relaxed font-light">
                 {type.description}
               </p>
 
@@ -322,7 +322,7 @@ export default function IceCreamFacts() {
                       className="w-5 h-px mt-[10px] flex-shrink-0 rounded-full transition-all duration-300"
                       style={{ backgroundColor: `${type.color}50` }}
                     />
-                    <span className="text-gray-400 text-sm md:text-base font-light leading-snug">
+                    <span className="text-gray-200 text-sm md:text-base font-light leading-snug">
                       {k}
                     </span>
                   </li>
@@ -333,7 +333,7 @@ export default function IceCreamFacts() {
         </div>
 
         {/* Bottom note */}
-        <p className="text-center text-gray-700 text-[10px] tracking-[0.2em] uppercase mt-10 font-light">
+        <p className="text-center text-gray-500 text-[10px] tracking-[0.2em] uppercase mt-10 font-light">
           Bij IJssalon Italia serveren wij zowel roomijs, gelato als sorbetijs — dagelijks vers bereid in Vaals
         </p>
 

@@ -19,11 +19,11 @@ export default function Home() {
 
       {/* Content wrapper: slides OVER the sticky Hero */}
       <div className="relative z-10 bg-white shadow-[0_-20px_60px_rgba(0,0,0,0.4)] rounded-t-[3rem] md:rounded-t-[4rem]">
+        <IceCreamFacts />
         <ToGo />
         <PremiumSlider />
         <About />
         <Gallery />
-        <IceCreamFacts />
         <IceCream />
         <History />
         <Footer />
