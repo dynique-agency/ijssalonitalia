@@ -2,6 +2,7 @@
 
 import Image from 'next/image'
 import { useState, useEffect, useRef } from 'react'
+import { businessData } from '../data'
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false)
@@ -80,7 +81,7 @@ export default function Header() {
                 </a>
               ))}
               <a
-                href="tel:+31611318094"
+                href={`tel:${businessData.contact_info.phone_href}`}
                 className="bg-gold hover:bg-gold-dark text-white px-5 py-2 rounded-full transition-all duration-300 font-semibold text-xs shadow-lg hover:shadow-xl hover:scale-105 whitespace-nowrap"
               >
                 Contact
@@ -143,7 +144,7 @@ export default function Header() {
             <div className="h-px bg-gray-100 mx-6 mb-4" />
             <div className="px-6">
               <a
-                href="tel:+31611318094"
+                href={`tel:${businessData.contact_info.phone_href}`}
                 onClick={closeMenu}
                 className="flex items-center justify-center w-full bg-gold hover:bg-gold-dark text-white px-8 py-4 rounded-full transition-all duration-300 font-semibold shadow-lg hover:shadow-xl"
               >

@@ -105,7 +105,7 @@ export default function About() {
                     <svg className="w-5 h-5 text-gold flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                     </svg>
-                    <a href={`tel:${businessData.contact_info.phone}`} className="text-gray-300 hover:text-gold transition-colors text-sm md:text-base">
+                    <a href={`tel:${businessData.contact_info.phone_href}`} className="text-gray-300 hover:text-gold transition-colors text-sm md:text-base">
                       {businessData.contact_info.phone}
                     </a>
                   </div>
@@ -180,7 +180,7 @@ export default function About() {
             {/* CTA Button */}
             <div className="text-center mt-8 md:mt-10 pt-8 border-t border-white/10">
               <a 
-                href={`tel:${businessData.contact_info.phone}`}
+                href={`tel:${businessData.contact_info.phone_href}`}
                 className="inline-block bg-gold hover:bg-gold-dark text-white px-10 md:px-12 py-3.5 md:py-4 rounded-full transition-all duration-300 font-semibold text-sm md:text-base tracking-wide uppercase shadow-xl hover:shadow-2xl hover:scale-105"
               >
                 Bel Ons Direct

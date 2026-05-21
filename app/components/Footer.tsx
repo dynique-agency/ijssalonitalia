@@ -32,7 +32,7 @@ export default function Footer() {
                 {businessData.contact_info.address.postal_code} {businessData.contact_info.address.city}
               </p>
               <p>
-                <a href={`tel:${businessData.contact_info.phone}`} className="hover:text-gold transition-colors duration-300">
+                <a href={`tel:${businessData.contact_info.phone_href}`} className="hover:text-gold transition-colors duration-300">
                   {businessData.contact_info.phone}
                 </a>
               </p>

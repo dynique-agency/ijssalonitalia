@@ -86,7 +86,7 @@ export default function IceCream() {
   }
 
   return (
-    <section id="ijssoorten" className="relative py-12 md:py-20 overflow-hidden bg-white">
+    <section id="ijssoorten" className="relative py-16 md:py-24 overflow-hidden bg-white">
       {/* Background Pattern */}
       <div 
         className="absolute inset-0 opacity-20"

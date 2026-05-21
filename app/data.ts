@@ -19,6 +19,7 @@ export const businessData = {
       country: "Nederland"
     },
     phone: "+31 6 11318094",
+    phone_href: "+31611318094",
     email: "ijssalonitalia@me.com",
     website: "https://www.ijssalonitaliavaals.nl"
   },

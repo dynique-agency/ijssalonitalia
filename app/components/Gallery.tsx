@@ -6,27 +6,27 @@ export default function Gallery() {
   const galleryImages = [
     {
       src: "/ijs.webp",
-      alt: "Ambachtelijk Ijs",
+      alt: "Kleurrijke coupes en ambachtelijke ijssmaken in de vitrine van IJssalon Italia Vaals",
       caption: "Verse ijssmaken, dagelijks bereid"
     },
     {
       src: "/spaghettiijs.webp",
-      alt: "Spaghetti Ijs",
+      alt: "Spaghetti-ijs met slagroom en aardbeisaus, het handtekening-dessert van IJssalon Italia",
       caption: "Ons beroemde spaghetti-ijs"
     },
     {
       src: "/koffiemetapfelstrudel.webp",
-      alt: "Koffie met Apfelstrudel",
+      alt: "Italiaanse espresso geserveerd met een huisgemaakte apfelstrudel op houten tafel",
       caption: "Perfecte espresso met apfelstrudel"
     },
     {
       src: "/caramelkoffie.webp",
-      alt: "Caramel Koffie Specialiteit",
+      alt: "Koffie-caramel specialiteit met slagroom en karameltopping, vers bereid bij IJssalon Italia",
       caption: "Huisgemaakte specialiteiten"
     },
     {
       src: "/ijsalonvroeger.webp",
-      alt: "IJssalon Italia 1969",
+      alt: "Historische foto van IJssalon Italia Vaals zoals het er in 1969 uitzag, opgericht door Odone en Giovanna Bez",
       caption: "Onze roots, sinds 1969"
     }
   ]

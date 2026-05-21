@@ -3,11 +3,11 @@
 import Image from 'next/image'
 
 const premiumImages = [
-  { src: '/slider-koffie.webp',          alt: 'IJskoffie',        label: 'IJskoffie' },
-  { src: '/slider-sundae-aardbei.webp',  alt: 'Aardbei sundae',   label: 'Aardbei sundae' },
-  { src: '/slider-spaghettiijs.webp',    alt: 'Spaghettiijs',     label: 'Spaghettiijs' },
-  { src: '/slider-sundae-pistache.webp', alt: 'Costanza Coupe',   label: 'Costanza Coupe' },
-  { src: '/slider-sundae-fruit.webp',    alt: 'Fruit sundae',     label: 'Fruit sundae' },
+  { src: '/slider-koffie.webp',          alt: 'Koffie-ijsspecialiteit met slagroom bij IJssalon Italia Vaals',          label: 'IJskoffie' },
+  { src: '/slider-sundae-aardbei.webp',  alt: 'Aardbei sundae met verse aardbeien en slagroom in een coupe-glas',       label: 'Aardbei sundae' },
+  { src: '/slider-spaghettiijs.webp',    alt: 'Handgemaakt spaghetti-ijs met vanille, slagroom en aardbeisaus',          label: 'Spaghettiijs' },
+  { src: '/slider-sundae-pistache.webp', alt: 'Pistache sundae met romig pistache-ijs en krokante topping in een coupe', label: 'Pistache sundae' },
+  { src: '/slider-sundae-fruit.webp',    alt: 'Verse fruit sundae met seizoensfruit en slagroom bij IJssalon Italia',   label: 'Fruit sundae' },
 ]
 
 export default function PremiumSlider() {
