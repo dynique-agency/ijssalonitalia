@@ -7,6 +7,7 @@ import Gallery from './components/Gallery'
 import IceCreamFacts from './components/IceCreamFacts'
 import IceCream from './components/IceCream'
 import History from './components/History'
+import RouteSection from './components/RouteSection'
 import Footer from './components/Footer'
 import LoadingScreen from './components/LoadingScreen'
 
@@ -26,6 +27,7 @@ export default function Home() {
         <Gallery />
         <IceCream />
         <History />
+        <RouteSection />
         <Footer />
       </div>
     </main>

@@ -3,6 +3,7 @@ import { Cormorant_Garamond, Inter } from 'next/font/google'
 import './globals.css'
 import CookieConsent from './components/CookieConsent'
 import AnnouncementModal from './components/AnnouncementModal'
+import BackToTop from './components/BackToTop'
 
 const cormorant = Cormorant_Garamond({
   subsets: ['latin'],
@@ -116,6 +117,7 @@ export default function RootLayout({
         {children}
         <AnnouncementModal />
         <CookieConsent />
+        <BackToTop />
       </body>
     </html>
   )
