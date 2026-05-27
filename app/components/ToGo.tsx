@@ -297,6 +297,59 @@ export default function ToGo() {
             </div>
           </div>
         </div>
+
+        {/* ── Nieuwe Coupe Spotlight ── */}
+        <div className="border-t border-white/[0.06] py-12 md:py-16">
+          <div className="text-center mb-8 md:mb-10">
+            <p className="text-gold/60 text-[10px] tracking-[0.4em] uppercase font-light mb-2">Nieuw in ons assortiment</p>
+            <h3 className="font-cormorant text-3xl sm:text-4xl md:text-5xl font-semibold text-white leading-tight">
+              Onze Nieuwe Coupe
+            </h3>
+          </div>
+
+          <div className="max-w-sm mx-auto">
+            <div className="group relative rounded-2xl overflow-hidden bg-white/5 border border-white/10 hover:border-gold/40 transition-all duration-500 shadow-2xl hover:shadow-gold/10">
+
+              {/* Nieuw badge */}
+              <div className="absolute top-4 left-4 z-10">
+                <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-gold text-white text-[10px] font-bold uppercase tracking-[0.2em] shadow-lg">
+                  <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                  Nieuw
+                </span>
+              </div>
+
+              {/* Image */}
+              <div className="relative h-72 sm:h-80 overflow-hidden">
+                <Image
+                  src="/nieuweijscoupe.jpeg"
+                  alt="Choco Berry Coupe — nieuw bij IJssalon Italia Vaals, te bestellen om mee te nemen"
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-105 brightness-95 group-hover:brightness-105"
+                  quality={90}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+              </div>
+
+              {/* Info */}
+              <div className="p-6">
+                <h4 className="font-cormorant text-2xl md:text-3xl font-semibold text-white mb-2">
+                  Choco Berry Coupe
+                </h4>
+                <p className="text-gray-400 text-sm font-light leading-relaxed">
+                  Een verwennerij van rijke chocolade en verse bessen — nu verkrijgbaar om mee te nemen.
+                </p>
+                <div className="mt-4 flex items-center gap-2">
+                  <span className="text-[10px] text-gold/70 tracking-[0.3em] uppercase font-light">To Go beschikbaar</span>
+                  <span className="flex-1 h-px bg-gold/20" />
+                  <span className="text-gold text-lg">🍫🍓</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
   )
