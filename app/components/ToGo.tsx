@@ -7,31 +7,52 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 gsap.registerPlugin(ScrollTrigger)
 
-function LuxeReveal({ text, className, delay = 0 }: { text: string; className?: string; delay?: number }) {
+function UltraReveal({
+  text,
+  className,
+  delay = 0,
+  shimmerLight = false,
+}: {
+  text: string
+  className?: string
+  delay?: number
+  shimmerLight?: boolean
+}) {
   const containerRef = useRef<HTMLSpanElement>(null)
+  const shimmerRef  = useRef<HTMLSpanElement>(null)
   const hasAnimated = useRef(false)
 
   useEffect(() => {
     if (!containerRef.current || hasAnimated.current) return
 
-    const words = containerRef.current.querySelectorAll<HTMLElement>('.word-inner')
-    gsap.set(words, { yPercent: 115 })
+    const chars = containerRef.current.querySelectorAll<HTMLElement>('.ci')
+    gsap.set(chars, { yPercent: 120, filter: 'blur(10px)', opacity: 0 })
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting && !hasAnimated.current) {
-          hasAnimated.current = true
-          observer.disconnect()
-          gsap.to(words, {
-            yPercent: 0,
-            duration: 1.3,
-            ease: 'power4.out',
-            stagger: 0.12,
-            delay: delay / 1000,
-          })
-        }
+        if (!entry.isIntersecting || hasAnimated.current) return
+        hasAnimated.current = true
+        observer.disconnect()
+
+        gsap.to(chars, {
+          yPercent: 0,
+          filter: 'blur(0px)',
+          opacity: 1,
+          duration: 1.6,
+          ease: 'power4.out',
+          stagger: { amount: 0.55, from: 'start', ease: 'power1.in' },
+          delay: delay / 1000,
+          onComplete() {
+            if (!shimmerRef.current) return
+            gsap.fromTo(
+              shimmerRef.current,
+              { x: '-105%', opacity: 1 },
+              { x: '205%', duration: 1.0, ease: 'power2.inOut', delay: 0.05 }
+            )
+          },
+        })
       },
-      { threshold: 0.2 }
+      { threshold: 0.15 }
     )
 
     observer.observe(containerRef.current)
@@ -39,12 +60,28 @@ function LuxeReveal({ text, className, delay = 0 }: { text: string; className?: 
   }, [delay])
 
   return (
-    <span ref={containerRef} className={className} aria-label={text}>
-      {text.split(' ').map((word, i) => (
-        <span key={i} className="inline-block overflow-hidden leading-[1.15]" style={{ marginRight: '0.22em' }}>
-          <span className="word-inner inline-block">{word}</span>
-        </span>
-      ))}
+    <span ref={containerRef} className={`relative ${className ?? ''}`} aria-label={text}>
+      {text.split('').map((char, i) =>
+        char === ' ' ? (
+          <span key={i} className="inline-block" style={{ width: '0.28em' }} aria-hidden />
+        ) : (
+          <span key={i} className="inline-block overflow-hidden" style={{ lineHeight: 1.15 }}>
+            <span className="ci inline-block">{char}</span>
+          </span>
+        )
+      )}
+      {/* shimmer sweep */}
+      <span
+        ref={shimmerRef}
+        aria-hidden
+        className="pointer-events-none absolute top-0 left-0 h-full opacity-0"
+        style={{
+          width: '45%',
+          background: shimmerLight
+            ? 'linear-gradient(110deg, transparent 15%, rgba(255,255,255,0.22) 50%, transparent 85%)'
+            : 'linear-gradient(110deg, transparent 15%, rgba(201,169,97,0.45) 50%, transparent 85%)',
+        }}
+      />
     </span>
   )
 }
@@ -196,11 +233,11 @@ export default function ToGo() {
                 </span>
               </div>
 
-              {/* Heading with Luxe Reveal */}
+              {/* Heading — ultra premium character reveal */}
               <h2 className="animate-item font-cormorant text-4xl sm:text-5xl md:text-6xl lg:text-5xl xl:text-6xl font-semibold text-white mb-6 md:mb-8 leading-[1.1]">
-                <LuxeReveal text="Geniet Onderweg" className="block" delay={100} />
+                <UltraReveal text="Geniet Onderweg" className="block" delay={100} shimmerLight />
                 <span className="block text-gold mt-1">
-                  <LuxeReveal text="To Go" delay={500} />
+                  <UltraReveal text="To Go" delay={600} />
                 </span>
               </h2>
 
