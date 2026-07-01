@@ -1,95 +1,50 @@
 'use client'
 
 import Image from 'next/image'
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 gsap.registerPlugin(ScrollTrigger)
 
-const GLITCH_CHARS = '!<>_#X$%&@*+=?~'
-
-function DecryptText({ text, className, delay = 0 }: { text: string; className?: string; delay?: number }) {
+function LuxeReveal({ text, className, delay = 0 }: { text: string; className?: string; delay?: number }) {
   const containerRef = useRef<HTMLSpanElement>(null)
-  const [displayed, setDisplayed] = useState('')
   const hasAnimated = useRef(false)
 
   useEffect(() => {
     if (!containerRef.current || hasAnimated.current) return
+
+    const words = containerRef.current.querySelectorAll<HTMLElement>('.word-inner')
+    gsap.set(words, { yPercent: 115 })
 
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting && !hasAnimated.current) {
           hasAnimated.current = true
           observer.disconnect()
-          startDecrypt()
+          gsap.to(words, {
+            yPercent: 0,
+            duration: 1.3,
+            ease: 'power4.out',
+            stagger: 0.12,
+            delay: delay / 1000,
+          })
         }
       },
-      { threshold: 0.3 }
+      { threshold: 0.2 }
     )
 
     observer.observe(containerRef.current)
     return () => observer.disconnect()
-  }, [])
-
-  const startDecrypt = () => {
-    const chars = text.split('')
-    const resolved = new Array(chars.length).fill(false)
-    const current = new Array(chars.length).fill('')
-
-    // Organic timing: each char gets a unique resolve time with power4.inOut distribution
-    const resolveTimings: number[] = chars.map((_, i) => {
-      const t = i / Math.max(chars.length - 1, 1)
-      // power4.inOut easing for stagger
-      const eased = t < 0.5
-        ? 8 * t * t * t * t
-        : 1 - Math.pow(-2 * t + 2, 4) / 2
-      return delay + eased * 1800
-    })
-
-    let startTime: number | null = null
-    let rafId: number
-
-    const animate = (timestamp: number) => {
-      if (!startTime) startTime = timestamp
-      const elapsed = timestamp - startTime
-
-      let allDone = true
-      for (let i = 0; i < chars.length; i++) {
-        if (chars[i] === ' ') {
-          current[i] = '\u00A0'
-          resolved[i] = true
-          continue
-        }
-        if (resolved[i]) continue
-
-        if (elapsed >= resolveTimings[i]) {
-          current[i] = chars[i]
-          resolved[i] = true
-        } else if (elapsed >= resolveTimings[i] - 200) {
-          // Glitch phase: 200ms of random chars before resolving
-          current[i] = GLITCH_CHARS[Math.floor(Math.random() * GLITCH_CHARS.length)]
-          allDone = false
-        } else {
-          current[i] = ''
-          allDone = false
-        }
-      }
-
-      setDisplayed(current.join(''))
-
-      if (!allDone) {
-        rafId = requestAnimationFrame(animate)
-      }
-    }
-
-    rafId = requestAnimationFrame(animate)
-    return () => cancelAnimationFrame(rafId)
-  }
+  }, [delay])
 
   return (
-    <span ref={containerRef} className={className}>
-      {displayed || '\u00A0'}
+    <span ref={containerRef} className={className} aria-label={text}>
+      {text.split(' ').map((word, i) => (
+        <span key={i} className="inline-block overflow-hidden leading-[1.15]" style={{ marginRight: '0.22em' }}>
+          <span className="word-inner inline-block">{word}</span>
+        </span>
+      ))}
     </span>
   )
 }
@@ -241,11 +196,11 @@ export default function ToGo() {
                 </span>
               </div>
 
-              {/* Heading with Decrypt Effect */}
-              <h2 className="animate-item font-cormorant text-4xl sm:text-5xl md:text-6xl lg:text-5xl xl:text-6xl font-semibold text-white mb-6 md:mb-8 leading-[1.05]">
-                <DecryptText text="Geniet Onderweg" className="block" delay={200} />
+              {/* Heading with Luxe Reveal */}
+              <h2 className="animate-item font-cormorant text-4xl sm:text-5xl md:text-6xl lg:text-5xl xl:text-6xl font-semibold text-white mb-6 md:mb-8 leading-[1.1]">
+                <LuxeReveal text="Geniet Onderweg" className="block" delay={100} />
                 <span className="block text-gold mt-1">
-                  <DecryptText text="To Go" delay={800} />
+                  <LuxeReveal text="To Go" delay={500} />
                 </span>
               </h2>
 
