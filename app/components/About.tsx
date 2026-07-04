@@ -124,9 +124,13 @@ export default function About() {
               {/* Opening Hours */}
               <div>
                 <h3 className="font-cormorant text-2xl md:text-3xl font-semibold text-gold mb-2">Openingstijden</h3>
-                <p className="text-gray-500 text-xs mb-5 flex items-center gap-1.5">
+                <p className="text-gray-500 text-xs mb-2 flex items-center gap-1.5">
                   <svg className="w-3 h-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" /></svg>
                   Openingstijden zijn weersafhankelijk
+                </p>
+                <p className="text-gray-500 text-xs mb-5 flex items-center gap-1.5">
+                  <svg className="w-3 h-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                  Laatste bestelling 18:30
                 </p>
                 <div className="space-y-5">
                   {/* Summer */}
