@@ -124,13 +124,9 @@ export default function About() {
               {/* Opening Hours */}
               <div>
                 <h3 className="font-cormorant text-2xl md:text-3xl font-semibold text-gold mb-2">Openingstijden</h3>
-                <p className="text-gray-500 text-xs mb-2 flex items-center gap-1.5">
+                <p className="text-gray-500 text-xs mb-5 flex items-center gap-1.5">
                   <svg className="w-3 h-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" /></svg>
                   Openingstijden zijn weersafhankelijk
-                </p>
-                <p className="text-gray-500 text-xs mb-5 flex items-center gap-1.5">
-                  <svg className="w-3 h-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                  Laatste bestelling 18:30
                 </p>
                 <div className="space-y-5">
                   {/* Summer */}
@@ -153,6 +149,14 @@ export default function About() {
                         <p className="text-gold font-cormorant font-semibold text-2xl md:text-3xl leading-none">19:00 – 22:00</p>
                         <p className="text-gray-300 text-xs mt-2 tracking-wide uppercase">Alleen meenemen</p>
                       </div>
+                    </div>
+
+                    {/* Laatste bestelling */}
+                    <div className="flex items-center justify-center gap-2.5 px-5 py-3.5 bg-gold/15 border-t border-gold/20">
+                      <svg className="w-4 h-4 text-gold flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                      <p className="text-gold font-semibold text-sm tracking-wide">Laatste bestelling 18:30</p>
                     </div>
 
                     {/* Monday note */}
