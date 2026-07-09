@@ -109,6 +109,14 @@ export default function AnnouncementModal() {
             </div>
           </div>
 
+          {/* Laatste bestelling */}
+          <div className="mx-7 mb-5 flex items-center justify-center gap-2.5 rounded-2xl bg-[#c9a84c]/15 border border-[#c9a84c]/20 px-4 py-3">
+            <svg className="w-4 h-4 text-[#c9a84c] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <p className="text-[#c9a84c] font-semibold text-sm tracking-wide">Laatste bestelling 18:30</p>
+          </div>
+
           {/* Ice cream highlight */}
           <div className="mx-7 mb-5 rounded-2xl border border-[#c9a84c]/15 bg-gradient-to-r from-[#c9a84c]/5 to-transparent p-4 flex items-start gap-4">
             <span className="text-2xl flex-shrink-0 mt-0.5">🍨</span>
