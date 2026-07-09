@@ -19,7 +19,7 @@ export default function BackToTop() {
     <button
       onClick={scrollToTop}
       aria-label="Terug naar boven"
-      className={`fixed bottom-6 right-6 z-50 w-11 h-11 rounded-full bg-gold shadow-lg flex items-center justify-center transition-all duration-300 hover:bg-gold-dark hover:scale-110 hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 ${
+      className={`press fixed bottom-6 right-6 z-50 w-11 h-11 rounded-full bg-gold shadow-lg flex items-center justify-center transition-[opacity,transform,background-color,box-shadow] duration-300 hover:bg-gold-dark hover:scale-110 hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 ${
         visible ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 translate-y-4 pointer-events-none'
       }`}
     >

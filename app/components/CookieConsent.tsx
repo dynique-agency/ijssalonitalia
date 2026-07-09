@@ -95,7 +95,7 @@ export default function CookieConsent() {
             <button
               onClick={rejectAll}
               aria-label="Sluiten"
-              className="text-gray-600 hover:text-gray-300 transition-colors flex-shrink-0 mt-0.5"
+              className="press text-gray-600 hover:text-gray-300 transition-colors flex-shrink-0 mt-0.5"
             >
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -125,12 +125,18 @@ export default function CookieConsent() {
                 </div>
                 <button
                   onClick={() => setAnalytics(v => !v)}
-                  className={`w-9 h-5 rounded-full transition-colors duration-300 flex items-center px-0.5 ${
-                    analytics ? 'bg-[#c9a84c] justify-end' : 'bg-white/10 justify-start'
+                  className={`press relative w-9 h-5 rounded-full transition-colors duration-300 px-0.5 ${
+                    analytics ? 'bg-[#c9a84c]' : 'bg-white/10'
                   }`}
                   aria-label={analytics ? 'Analytisch uitschakelen' : 'Analytisch inschakelen'}
                 >
-                  <div className="w-4 h-4 rounded-full bg-white shadow" />
+                  <div
+                    className="absolute top-0.5 left-0.5 w-4 h-4 rounded-full bg-white shadow transition-transform duration-200"
+                    style={{
+                      transitionTimingFunction: 'var(--ease-out-strong)',
+                      transform: analytics ? 'translateX(16px)' : 'translateX(0)',
+                    }}
+                  />
                 </button>
               </div>
               <div className="h-px bg-white/5" />
@@ -142,12 +148,18 @@ export default function CookieConsent() {
                 </div>
                 <button
                   onClick={() => setMarketing(v => !v)}
-                  className={`w-9 h-5 rounded-full transition-colors duration-300 flex items-center px-0.5 ${
-                    marketing ? 'bg-[#c9a84c] justify-end' : 'bg-white/10 justify-start'
+                  className={`press relative w-9 h-5 rounded-full transition-colors duration-300 px-0.5 ${
+                    marketing ? 'bg-[#c9a84c]' : 'bg-white/10'
                   }`}
                   aria-label={marketing ? 'Marketing uitschakelen' : 'Marketing inschakelen'}
                 >
-                  <div className="w-4 h-4 rounded-full bg-white shadow" />
+                  <div
+                    className="absolute top-0.5 left-0.5 w-4 h-4 rounded-full bg-white shadow transition-transform duration-200"
+                    style={{
+                      transitionTimingFunction: 'var(--ease-out-strong)',
+                      transform: marketing ? 'translateX(16px)' : 'translateX(0)',
+                    }}
+                  />
                 </button>
               </div>
             </div>
@@ -157,28 +169,28 @@ export default function CookieConsent() {
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5">
             <button
               onClick={acceptAll}
-              className="flex-1 bg-[#c9a84c] hover:bg-[#b8983c] text-black text-xs font-semibold tracking-wide uppercase px-5 py-2.5 rounded-full transition-all duration-300 hover:shadow-[0_0_20px_rgba(201,168,76,0.3)]"
+              className="press flex-1 bg-[#c9a84c] hover:bg-[#b8983c] text-black text-xs font-semibold tracking-wide uppercase px-5 py-2.5 rounded-full transition-[background-color,box-shadow,transform] duration-300 hover:shadow-[0_0_20px_rgba(201,168,76,0.3)]"
             >
               Alles accepteren
             </button>
             {expanded ? (
               <button
                 onClick={acceptSelected}
-                className="flex-1 border border-white/20 hover:border-white/40 text-white text-xs font-semibold tracking-wide uppercase px-5 py-2.5 rounded-full transition-all duration-300"
+                className="press flex-1 border border-white/20 hover:border-white/40 text-white text-xs font-semibold tracking-wide uppercase px-5 py-2.5 rounded-full transition-[border-color,transform] duration-300"
               >
                 Opslaan
               </button>
             ) : (
               <button
                 onClick={() => setExpanded(true)}
-                className="flex-1 border border-white/20 hover:border-white/40 text-white text-xs font-semibold tracking-wide uppercase px-5 py-2.5 rounded-full transition-all duration-300"
+                className="press flex-1 border border-white/20 hover:border-white/40 text-white text-xs font-semibold tracking-wide uppercase px-5 py-2.5 rounded-full transition-[border-color,transform] duration-300"
               >
                 Voorkeuren instellen
               </button>
             )}
             <button
               onClick={rejectAll}
-              className="flex-1 text-gray-500 hover:text-gray-300 text-xs tracking-wide uppercase px-5 py-2.5 rounded-full transition-colors duration-300"
+              className="press flex-1 text-gray-500 hover:text-gray-300 text-xs tracking-wide uppercase px-5 py-2.5 rounded-full transition-colors duration-300"
             >
               Alleen noodzakelijk
             </button>

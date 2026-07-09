@@ -1,14 +1,15 @@
 'use client'
 
 import Image from 'next/image'
+import Reveal from './Reveal'
 
 export default function History() {
   return (
     <section id="geschiedenis" className="relative py-16 md:py-24 bg-gray-50">
       <div className="container mx-auto px-4 md:px-8 lg:px-12">
         <div className="max-w-6xl mx-auto">
-          
-          <div className="text-center mb-12 md:mb-16">
+
+          <Reveal className="text-center mb-12 md:mb-16">
             <h2 className="font-cormorant text-4xl sm:text-5xl md:text-6xl font-semibold text-black mb-4 md:mb-6 leading-[1.1] tracking-tight">
               Onze Geschiedenis
             </h2>
@@ -16,12 +17,12 @@ export default function History() {
             <p className="text-gray-700 text-base md:text-lg font-light">
               Meer dan 50 jaar passie voor ijs en gastvrijheid
             </p>
-          </div>
+          </Reveal>
 
           <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
             {/* Compact Vintage Photo */}
-            <div className="relative rounded-2xl overflow-hidden shadow-xl group">
-              <Image 
+            <Reveal delay={100} y={32} className="relative rounded-2xl overflow-hidden shadow-xl group">
+              <Image
                 src="/ijsalonvroeger.webp"
                 alt="IJssalon Italia 1969"
                 width={600}
@@ -35,10 +36,10 @@ export default function History() {
                   IJssalon Italia, Vaals
                 </p>
               </div>
-            </div>
+            </Reveal>
 
             {/* Story Text */}
-            <div className="space-y-6">
+            <Reveal delay={200} y={32} className="space-y-6">
               <div>
                 <h3 className="font-cormorant text-2xl md:text-3xl font-semibold text-black mb-4">
                   Een Familieverhaal
@@ -63,7 +64,7 @@ export default function History() {
               <p className="text-gray-700 text-base md:text-lg leading-relaxed font-light">
                 Vandaag, meer dan 50 jaar later, blijven we trouw aan onze roots. Ons ijs wordt nog steeds dagelijks vers bereid, met dezelfde liefde en zorg als in 1969.
               </p>
-            </div>
+            </Reveal>
           </div>
 
         </div>

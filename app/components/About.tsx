@@ -2,15 +2,16 @@
 
 import { businessData } from '../data'
 import Image from 'next/image'
+import Reveal from './Reveal'
 
 export default function About() {
   return (
     <section id="over-ons" className="relative py-16 md:py-24 lg:py-32 bg-white">
       <div className="container mx-auto px-4 md:px-8 lg:px-12">
         <div className="max-w-7xl mx-auto">
-          
+
           {/* Hero Text - Compact */}
-          <div className="text-center mb-12 md:mb-16 max-w-3xl mx-auto">
+          <Reveal className="text-center mb-12 md:mb-16 max-w-3xl mx-auto">
             <h2 className="font-cormorant text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold text-black mb-4 md:mb-6 leading-[1.1] tracking-tight">
               Welkom bij<br/>IJssalon Italia
             </h2>
@@ -18,10 +19,10 @@ export default function About() {
             <p className="text-gray-700 text-base md:text-lg leading-relaxed font-light">
               Sinds <span className="font-semibold text-gold">1969</span> het adres voor authentiek Italiaans ijs en gastvrijheid in het hart van Vaals
             </p>
-          </div>
+          </Reveal>
 
           {/* Coffee Photos Grid */}
-          <div className="grid md:grid-cols-2 gap-6 md:gap-8 mb-12 md:mb-16">
+          <Reveal delay={100} className="grid md:grid-cols-2 gap-6 md:gap-8 mb-12 md:mb-16">
             <div className="relative rounded-2xl overflow-hidden shadow-xl group h-64 md:h-80">
               <Image 
                 src="/koffiemetapfelstrudel.webp"
@@ -55,10 +56,10 @@ export default function About() {
                 <p className="text-gray-200 text-sm md:text-base font-light">Ambachtelijk bereid</p>
               </div>
             </div>
-          </div>
+          </Reveal>
 
           {/* USPs - Compact Luxury */}
-          <div className="grid md:grid-cols-3 gap-6 md:gap-8 mb-12 md:mb-16">
+          <Reveal delay={150} className="grid md:grid-cols-3 gap-6 md:gap-8 mb-12 md:mb-16">
             <div className="text-center p-6 border-t-2 border-gold">
               <div className="text-gold text-4xl md:text-5xl font-cormorant font-semibold mb-2">50+</div>
               <p className="text-gray-900 font-semibold text-sm uppercase tracking-wider mb-1">Ijssmaken</p>
@@ -74,10 +75,10 @@ export default function About() {
               <p className="text-gray-900 font-semibold text-sm uppercase tracking-wider mb-1">Ambachtelijk</p>
               <p className="text-gray-600 text-xs md:text-sm font-light">Traditionele recepten</p>
             </div>
-          </div>
+          </Reveal>
 
           {/* Location & Hours - Dark Luxury Card */}
-          <div id="openingstijden" className="bg-gradient-to-br from-black via-gray-900 to-black rounded-2xl md:rounded-3xl p-8 md:p-10 lg:p-12 shadow-2xl">
+          <Reveal delay={100} id="openingstijden" className="bg-gradient-to-br from-black via-gray-900 to-black rounded-2xl md:rounded-3xl p-8 md:p-10 lg:p-12 shadow-2xl">
             <div className="grid lg:grid-cols-2 gap-8 md:gap-12">
               
               {/* Location */}
@@ -187,14 +188,14 @@ export default function About() {
 
             {/* CTA Button */}
             <div className="text-center mt-8 md:mt-10 pt-8 border-t border-white/10">
-              <a 
+              <a
                 href={`tel:${businessData.contact_info.phone_href}`}
-                className="inline-block bg-gold hover:bg-gold-dark text-white px-10 md:px-12 py-3.5 md:py-4 rounded-full transition-all duration-300 font-semibold text-sm md:text-base tracking-wide uppercase shadow-xl hover:shadow-2xl hover:scale-105"
+                className="press inline-block bg-gold hover:bg-gold-dark text-white px-10 md:px-12 py-3.5 md:py-4 rounded-full transition-[background-color,box-shadow,transform] duration-300 font-semibold text-sm md:text-base tracking-wide uppercase shadow-xl hover:shadow-2xl hover:scale-105"
               >
                 Bel Ons Direct
               </a>
             </div>
-          </div>
+          </Reveal>
 
         </div>
       </div>

@@ -67,7 +67,7 @@ export default function AnnouncementModal() {
             <button
               onClick={close}
               aria-label="Sluiten"
-              className="absolute top-5 right-5 w-8 h-8 rounded-full bg-white/5 hover:bg-white/10 flex items-center justify-center text-gray-500 hover:text-white transition-all duration-300"
+              className="press absolute top-5 right-5 w-8 h-8 rounded-full bg-white/5 hover:bg-white/10 flex items-center justify-center text-gray-500 hover:text-white transition-colors duration-300"
             >
               <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M6 18L18 6M6 6l12 12" />
@@ -135,7 +135,7 @@ export default function AnnouncementModal() {
 
             <button
               onClick={close}
-              className="group flex items-center gap-2 bg-[#c9a84c] hover:bg-[#b8983c] text-black text-xs font-semibold tracking-wide uppercase px-5 py-2.5 rounded-full transition-all duration-300 flex-shrink-0 hover:shadow-[0_0_20px_rgba(201,168,76,0.3)]"
+              className="press group flex items-center gap-2 bg-[#c9a84c] hover:bg-[#b8983c] text-black text-xs font-semibold tracking-wide uppercase px-5 py-2.5 rounded-full transition-[background-color,box-shadow,transform] duration-300 flex-shrink-0 hover:shadow-[0_0_20px_rgba(201,168,76,0.3)]"
             >
               Begrepen
               <svg className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

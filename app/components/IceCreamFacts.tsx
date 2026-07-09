@@ -185,7 +185,7 @@ export default function IceCreamFacts() {
             <button
               key={i}
               onClick={() => setActive(i)}
-              className="relative flex flex-col items-center gap-3 px-4 py-6 md:py-8 transition-colors duration-300 outline-none"
+              className="press relative flex flex-col items-center gap-3 px-4 py-6 md:py-8 transition-colors duration-300 outline-none"
               style={{ backgroundColor: active === i ? '#111111' : '#0c0c0c' }}
             >
               {/* Active top accent */}

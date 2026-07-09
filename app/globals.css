@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  /* Strong custom easing curves — the built-in CSS easings are too weak to feel intentional */
+  --ease-out-strong: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out-strong: cubic-bezier(0.77, 0, 0.175, 1);
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;
@@ -69,5 +75,29 @@ button:focus-visible {
 /* Verwijder standaard outline alleen als focus-visible beschikbaar is */
 :focus:not(:focus-visible) {
   outline: none;
+}
+
+/* Press feedback: buttons must feel responsive to touch.
+   Only sets duration/timing (not transition-property), so it speeds up
+   whatever properties the element already transitions instead of
+   silently dropping its hover color/shadow transitions. */
+.press {
+  transition-duration: 150ms;
+  transition-timing-function: var(--ease-out-strong);
+}
+.press:active {
+  transform: scale(0.97);
+}
+
+/* Reduced motion: keep opacity/color, drop movement */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 

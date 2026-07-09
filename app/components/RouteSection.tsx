@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import { businessData } from '../data'
+import Reveal from './Reveal'
 
 const STORAGE_KEY = 'ijssalon_cookie_consent'
 const MAPS_URL    = 'https://www.google.com/maps/dir/?api=1&destination=Maastrichterlaan+26,+6291+ES+Vaals,+Nederland'
@@ -44,7 +45,7 @@ export default function RouteSection() {
         <div className="max-w-7xl mx-auto">
 
           {/* Header */}
-          <div className="text-center mb-10 md:mb-14">
+          <Reveal className="text-center mb-10 md:mb-14">
             <h2 className="font-cormorant text-4xl sm:text-5xl md:text-6xl font-semibold text-black leading-[1.1] tracking-tight mb-4">
               Bezoek Ons
             </h2>
@@ -52,9 +53,9 @@ export default function RouteSection() {
             <p className="text-gray-500 text-sm md:text-base font-light">
               Wij verwelkomen je graag in het hart van Vaals
             </p>
-          </div>
+          </Reveal>
 
-          <div className="grid lg:grid-cols-5 gap-0 rounded-2xl overflow-hidden shadow-2xl">
+          <Reveal delay={100} y={32} className="grid lg:grid-cols-5 gap-0 rounded-2xl overflow-hidden shadow-2xl">
 
             {/* ── Linker kolom: adres + CTA ── */}
             <div className="lg:col-span-2 bg-gradient-to-br from-black via-gray-900 to-black p-8 md:p-10 lg:p-12 flex flex-col justify-between">
@@ -104,7 +105,7 @@ export default function RouteSection() {
                 href={MAPS_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-8 group inline-flex items-center justify-center gap-3 w-full bg-gold hover:bg-gold-dark text-white px-8 py-4 rounded-full transition-all duration-300 font-semibold text-sm tracking-wide shadow-xl hover:shadow-2xl hover:scale-[1.02]"
+                className="press mt-8 group inline-flex items-center justify-center gap-3 w-full bg-gold hover:bg-gold-dark text-white px-8 py-4 rounded-full transition-[background-color,box-shadow,transform] duration-300 font-semibold text-sm tracking-wide shadow-xl hover:shadow-2xl hover:scale-[1.02]"
               >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
@@ -158,7 +159,7 @@ export default function RouteSection() {
                     href={MAPS_URL}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-gold hover:text-gold-dark font-semibold text-sm transition-colors duration-300 underline underline-offset-4"
+                    className="press inline-flex items-center gap-2 text-gold hover:text-gold-dark font-semibold text-sm transition-colors duration-300 underline underline-offset-4"
                   >
                     Open in Google Maps
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -168,7 +169,7 @@ export default function RouteSection() {
                 </div>
               )}
             </div>
-          </div>
+          </Reveal>
 
         </div>
       </div>

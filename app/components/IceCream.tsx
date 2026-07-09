@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useMemo } from 'react'
+import Reveal from './Reveal'
 
 export default function IceCream() {
   const [searchQuery, setSearchQuery] = useState('')
@@ -58,7 +59,10 @@ export default function IceCream() {
     { name: "Advocaat", allergens: "🥃" },
     { name: "Kinder Surprise", allergens: "" },
     { name: "Lion", allergens: "🌾" },
-    { name: "Nutella", allergens: "🌾🌰" }
+    { name: "Nutella", allergens: "🌾🌰" },
+    { name: "Vanille mango crunch", allergens: "" },
+    { name: "Witte chocolade framboos crunch", allergens: "" },
+    { name: "Frambozen rozen", allergens: "" }
   ]
 
   const fruitFlavors = [
@@ -102,39 +106,39 @@ export default function IceCream() {
         <div className="max-w-5xl mx-auto">
           
           {/* Compact Header */}
-          <div className="text-center mb-8 md:mb-10">
+          <Reveal className="text-center mb-8 md:mb-10">
             <h2 className="font-cormorant text-3xl sm:text-4xl md:text-5xl font-semibold text-black mb-3 md:mb-4 leading-tight">
               Onze IJssmaken
             </h2>
             <p className="text-gray-600 text-sm md:text-base font-light">
               50+ ambachtelijke smaken, dagelijks vers bereid
             </p>
-          </div>
+          </Reveal>
 
           {/* Search Bar */}
-          <div className="mb-6 md:mb-8">
+          <Reveal delay={80} className="mb-6 md:mb-8">
             <div className="relative max-w-md mx-auto">
               <input
                 type="text"
                 placeholder="Zoek een smaak..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full px-5 md:px-6 py-3 md:py-3.5 pl-12 md:pl-14 rounded-full border-2 border-gray-200 focus:border-gold focus:outline-none transition-all duration-300 text-sm md:text-base"
+                className="w-full px-5 md:px-6 py-3 md:py-3.5 pl-12 md:pl-14 rounded-full border-2 border-gray-200 focus:border-gold focus:outline-none transition-colors duration-300 text-sm md:text-base"
               />
               <svg className="w-5 h-5 text-gray-400 absolute left-4 md:left-5 top-1/2 -translate-y-1/2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
               </svg>
             </div>
-          </div>
+          </Reveal>
 
           {/* Accordion Sections */}
-          <div className="space-y-4">
+          <Reveal delay={140} className="space-y-4">
             
             {/* Roomijs Section */}
             <div className="border border-gray-200 rounded-2xl overflow-hidden bg-white shadow-sm hover:shadow-md transition-shadow duration-300">
               <button
                 onClick={() => toggleSection('milk')}
-                className="w-full px-6 md:px-8 py-4 md:py-5 flex items-center justify-between bg-gradient-to-r from-gray-50 to-white hover:from-gold/5 hover:to-gold/5 transition-all duration-300"
+                className="press w-full px-6 md:px-8 py-4 md:py-5 flex items-center justify-between bg-gradient-to-r from-gray-50 to-white hover:from-gold/5 hover:to-gold/5 transition-colors duration-300"
               >
                 <div className="flex items-center gap-3 md:gap-4">
                   <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-gold/10 flex items-center justify-center">
@@ -195,7 +199,7 @@ export default function IceCream() {
             <div className="border border-gray-200 rounded-2xl overflow-hidden bg-white shadow-sm hover:shadow-md transition-shadow duration-300">
               <button
                 onClick={() => toggleSection('fruit')}
-                className="w-full px-6 md:px-8 py-4 md:py-5 flex items-center justify-between bg-gradient-to-r from-gray-50 to-white hover:from-gold/5 hover:to-gold/5 transition-all duration-300"
+                className="press w-full px-6 md:px-8 py-4 md:py-5 flex items-center justify-between bg-gradient-to-r from-gray-50 to-white hover:from-gold/5 hover:to-gold/5 transition-colors duration-300"
               >
                 <div className="flex items-center gap-3 md:gap-4">
                   <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-gold/10 flex items-center justify-center">
@@ -242,10 +246,27 @@ export default function IceCream() {
               </div>
             </div>
 
-          </div>
+          </Reveal>
+
+          {/* Verrassing Callout */}
+          <Reveal delay={100} className="mt-6 md:mt-8 relative overflow-hidden rounded-2xl bg-gradient-to-br from-gold/10 via-gold/5 to-transparent border border-gold/25 px-6 md:px-8 py-6 md:py-7">
+            <div className="flex items-start md:items-center gap-4">
+              <div className="w-11 h-11 md:w-12 md:h-12 rounded-full bg-gold/15 flex items-center justify-center flex-shrink-0">
+                <span className="text-xl md:text-2xl">✨</span>
+              </div>
+              <div>
+                <p className="font-cormorant text-lg md:text-xl font-semibold text-black leading-snug">
+                  Kom gerust langs, elke dag een verrassing!
+                </p>
+                <p className="text-gray-600 text-xs md:text-sm font-light mt-1 leading-relaxed">
+                  We hebben ook ijssmaken die niet op de website staan, maar wel gewoon in de zaak verkrijgbaar zijn.
+                </p>
+              </div>
+            </div>
+          </Reveal>
 
           {/* Compact Allergen Legend */}
-          <div className="mt-8 md:mt-10 bg-gradient-to-br from-black to-gray-900 rounded-2xl p-5 md:p-6">
+          <Reveal delay={160} className="mt-8 md:mt-10 bg-gradient-to-br from-black to-gray-900 rounded-2xl p-5 md:p-6">
             <h4 className="font-cormorant text-lg md:text-xl font-semibold text-gold mb-4 text-center">
               Legenda
             </h4>
@@ -262,7 +283,7 @@ export default function IceCream() {
                 </div>
               ))}
             </div>
-          </div>
+          </Reveal>
 
         </div>
       </div>

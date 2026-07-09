@@ -273,7 +273,7 @@ export default function ToGo() {
                   href="https://www.google.com/maps/place/Maastrichterlaan+26,+6291+ES+Vaals"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group inline-flex items-center gap-3 bg-white hover:bg-gold text-black hover:text-white px-8 md:px-10 py-4 md:py-4.5 rounded-full transition-all duration-300 font-semibold text-sm md:text-base tracking-wide shadow-xl hover:shadow-2xl hover:shadow-gold/30 hover:scale-105"
+                  className="press group inline-flex items-center gap-3 bg-white hover:bg-gold text-black hover:text-white px-8 md:px-10 py-4 md:py-4.5 rounded-full transition-[background-color,color,box-shadow,transform] duration-300 font-semibold text-sm md:text-base tracking-wide shadow-xl hover:shadow-2xl hover:shadow-gold/30 hover:scale-105"
                 >
                   <svg className="w-5 h-5 md:w-6 md:h-6 text-gold group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />

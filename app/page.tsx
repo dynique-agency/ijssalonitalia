@@ -6,6 +6,8 @@ import PremiumSlider from './components/PremiumSlider'
 import Gallery from './components/Gallery'
 import IceCreamFacts from './components/IceCreamFacts'
 import IceCream from './components/IceCream'
+import NewsSection from './components/NewsSection'
+import VacaturesSection from './components/VacaturesSection'
 import History from './components/History'
 import RouteSection from './components/RouteSection'
 import Footer from './components/Footer'
@@ -26,6 +28,8 @@ export default function Home() {
         <About />
         <Gallery />
         <IceCream />
+        <NewsSection />
+        <VacaturesSection />
         <History />
         <RouteSection />
         <Footer />

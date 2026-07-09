@@ -1,13 +1,18 @@
 'use client'
 
 import Image from 'next/image'
+import Link from 'next/link'
 import { useState, useEffect, useRef } from 'react'
 import { businessData } from '../data'
+import { vacatures } from '../vacatures-data'
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
+  const [vacDropdownOpen, setVacDropdownOpen] = useState(false)
+  const [mobileVacOpen, setMobileVacOpen] = useState(false)
   const sentinelRef = useRef<HTMLDivElement>(null)
+  const vacDropdownRef = useRef<HTMLDivElement>(null)
 
   // IntersectionObserver instead of scroll events — zero layout thrashing
   useEffect(() => {
@@ -29,13 +34,28 @@ export default function Header() {
     document.body.style.overflow = menuOpen ? 'hidden' : 'unset'
   }, [menuOpen])
 
-  const closeMenu = () => setMenuOpen(false)
+  // Sluit desktop dropdown bij klik buiten het element
+  useEffect(() => {
+    if (!vacDropdownOpen) return
+    const onClickOutside = (e: MouseEvent) => {
+      if (vacDropdownRef.current && !vacDropdownRef.current.contains(e.target as Node)) {
+        setVacDropdownOpen(false)
+      }
+    }
+    document.addEventListener('mousedown', onClickOutside)
+    return () => document.removeEventListener('mousedown', onClickOutside)
+  }, [vacDropdownOpen])
+
+  const closeMenu = () => {
+    setMenuOpen(false)
+    setMobileVacOpen(false)
+  }
 
   const navLinkClass = `transition-colors duration-300 font-medium tracking-wide whitespace-nowrap text-sm ${
     scrolled ? 'text-black hover:text-gold' : 'text-white hover:text-gold'
   }`
 
-  const mobileLink = "flex items-center px-8 py-4 text-black hover:bg-gold/10 hover:text-gold transition-colors duration-200 font-medium"
+  const mobileLink = "press flex items-center px-8 py-4 text-black hover:bg-gold/10 hover:text-gold transition-colors duration-200 font-medium"
 
   const navItems = [
     { href: '#over-ons', label: 'Over Ons', icon: 'M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z' },
@@ -45,6 +65,8 @@ export default function Header() {
     { href: '#openingstijden', label: 'Openingstijden', icon: 'M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z' },
     { href: '#geschiedenis', label: 'Geschiedenis', icon: 'M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253' },
   ]
+
+  const vacaturesIcon = 'M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m-4 6h16a2 2 0 002-2V8a2 2 0 00-2-2H4a2 2 0 00-2 2v10a2 2 0 002 2h16a2 2 0 002-2v-4a2 2 0 00-2-2H4a2 2 0 00-2 2z'
 
   return (
     <>
@@ -80,9 +102,70 @@ export default function Header() {
                   {item.label}
                 </a>
               ))}
+
+              {/* Vacatures dropdown */}
+              <div ref={vacDropdownRef} className="relative">
+                <button
+                  onClick={() => setVacDropdownOpen(!vacDropdownOpen)}
+                  className={`${navLinkClass} press flex items-center gap-1`}
+                >
+                  Vacatures
+                  <svg
+                    className={`w-3.5 h-3.5 transition-transform duration-300 ${vacDropdownOpen ? 'rotate-180' : ''}`}
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+
+                <div
+                  className={`absolute top-full right-0 mt-3 w-72 bg-white rounded-2xl shadow-2xl border border-gold/10 overflow-hidden transition-all duration-300 origin-top-right ${
+                    vacDropdownOpen ? 'opacity-100 scale-100 pointer-events-auto' : 'opacity-0 scale-95 pointer-events-none'
+                  }`}
+                >
+                  <div className="px-5 py-4 border-b border-gray-100 bg-gradient-to-br from-gold/5 to-transparent">
+                    <p className="text-black font-cormorant font-semibold text-lg">Openstaande vacatures</p>
+                  </div>
+                  {vacatures.map((job) => (
+                    <Link
+                      key={job.slug}
+                      href={`/vacatures/${job.slug}/`}
+                      onClick={() => setVacDropdownOpen(false)}
+                      className="press group flex items-start gap-3 px-5 py-4 hover:bg-gold/5 transition-colors duration-200 border-b border-gray-100 last:border-b-0"
+                    >
+                      <div className="flex-1 min-w-0">
+                        <p className="text-black text-sm font-semibold group-hover:text-gold transition-colors leading-snug">
+                          {job.title}
+                        </p>
+                        <span className="inline-block mt-1.5 text-[10px] uppercase tracking-[0.2em] text-gold/70 font-medium">
+                          {job.hoursLabel}
+                        </span>
+                      </div>
+                      <svg
+                        className="w-4 h-4 text-gold/50 group-hover:text-gold group-hover:translate-x-1 transition-all duration-300 flex-shrink-0 mt-1"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                      </svg>
+                    </Link>
+                  ))}
+                  <a
+                    href="#vacatures"
+                    onClick={() => setVacDropdownOpen(false)}
+                    className="press block text-center px-5 py-3 bg-gray-50 hover:bg-gold/10 text-gold text-xs font-semibold uppercase tracking-wide transition-colors duration-200"
+                  >
+                    Alle vacatures bekijken
+                  </a>
+                </div>
+              </div>
+
               <a
                 href={`tel:${businessData.contact_info.phone_href}`}
-                className="bg-gold hover:bg-gold-dark text-white px-5 py-2 rounded-full transition-all duration-300 font-semibold text-xs shadow-lg hover:shadow-xl hover:scale-105 whitespace-nowrap"
+                className="press bg-gold hover:bg-gold-dark text-white px-5 py-2 rounded-full transition-[background-color,box-shadow,transform] duration-300 font-semibold text-xs shadow-lg hover:shadow-xl hover:scale-105 whitespace-nowrap"
               >
                 Contact
               </a>
@@ -91,7 +174,7 @@ export default function Header() {
             {/* Mobile Hamburger */}
             <button
               onClick={() => setMenuOpen(!menuOpen)}
-              className={`md:hidden p-2 -m-2 transition-colors duration-300 ${
+              className={`press md:hidden p-2 -m-2 transition-colors duration-300 ${
                 scrolled ? 'text-black' : 'text-white'
               }`}
               aria-label="Menu"
@@ -141,12 +224,61 @@ export default function Header() {
               </div>
             ))}
 
+            {/* Vacatures accordion */}
+            <div>
+              <div className="h-px bg-gray-100 mx-6" />
+              <button
+                onClick={() => setMobileVacOpen(!mobileVacOpen)}
+                className={`${mobileLink} w-full justify-between`}
+              >
+                <span className="flex items-center">
+                  <svg className="w-5 h-5 mr-3 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={vacaturesIcon} />
+                  </svg>
+                  Vacatures
+                </span>
+                <svg
+                  className={`w-4 h-4 text-gold transition-transform duration-300 ${mobileVacOpen ? 'rotate-180' : ''}`}
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+
+              <div className={`overflow-hidden transition-all duration-300 ${mobileVacOpen ? 'max-h-60' : 'max-h-0'}`}>
+                <div className="bg-gray-50/70 px-6 py-2">
+                  {vacatures.map((job) => (
+                    <Link
+                      key={job.slug}
+                      href={`/vacatures/${job.slug}/`}
+                      onClick={closeMenu}
+                      className="press flex items-center justify-between py-3 border-b border-gray-100 last:border-b-0 group"
+                    >
+                      <div>
+                        <p className="text-black text-sm font-medium group-hover:text-gold transition-colors">
+                          {job.title}
+                        </p>
+                        <span className="text-[10px] uppercase tracking-[0.2em] text-gold/70 font-medium">
+                          {job.hoursLabel}
+                        </span>
+                      </div>
+                      <svg className="w-4 h-4 text-gold/50 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </div>
+
             <div className="h-px bg-gray-100 mx-6 mb-4" />
             <div className="px-6">
               <a
                 href={`tel:${businessData.contact_info.phone_href}`}
                 onClick={closeMenu}
-                className="flex items-center justify-center w-full bg-gold hover:bg-gold-dark text-white px-8 py-4 rounded-full transition-all duration-300 font-semibold shadow-lg hover:shadow-xl"
+                className="press flex items-center justify-center w-full bg-gold hover:bg-gold-dark text-white px-8 py-4 rounded-full transition-[background-color,box-shadow,transform] duration-300 font-semibold shadow-lg hover:shadow-xl"
               >
                 <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />

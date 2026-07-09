@@ -40,7 +40,7 @@ export default function Hero() {
       {/* IJsweetjes button */}
       <a
         href="#ijssoorten-uitleg"
-        className="absolute bottom-24 md:bottom-28 left-1/2 -translate-x-1/2 flex items-center gap-2.5 px-5 py-2.5 rounded-full border border-white/25 bg-white/10 backdrop-blur-md hover:bg-white/20 hover:border-white/40 transition-all duration-300 group whitespace-nowrap"
+        className="press absolute bottom-24 md:bottom-28 left-1/2 -translate-x-1/2 flex items-center gap-2.5 px-5 py-2.5 rounded-full border border-white/25 bg-white/10 backdrop-blur-md hover:bg-white/20 hover:border-white/40 transition-[background-color,border-color,transform] duration-300 group whitespace-nowrap"
       >
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" className="opacity-80 group-hover:opacity-100 flex-shrink-0">
           <path d="M17.657 11a6 6 0 1 0 -11.315 0" />
