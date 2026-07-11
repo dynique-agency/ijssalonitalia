@@ -15,7 +15,7 @@ const ICE_TYPES = [
     fatPct: 88,
     fatLabel: '≥ 10% vet',
     description:
-      'Roomijs wordt gemaakt op basis van melk, room, suiker en vaak eidooiers. Het bevat relatief veel vet — meestal 10% of meer — en wordt geserveerd rond −18 °C. Dit zorgt voor een stevige structuur en volle, romige smaak.',
+      'Roomijs wordt gemaakt op basis van melk, room, suiker en vaak eidooiers. Het bevat relatief veel vet (meestal 10% of meer) en wordt geserveerd rond −18 °C. Dit zorgt voor een stevige structuur en volle, romige smaak.',
     kenmerken: [
       'Rijk en romig',
       'Hoog vetgehalte',
@@ -57,7 +57,7 @@ const ICE_TYPES = [
     fatPct: 3,
     fatLabel: '0% vet',
     description:
-      'Sorbet bevat geen zuivel of eieren — alleen water, suiker en fruit (puree) of vruchtensap. Door het hoge fruitgehalte is het licht en fris, ideaal als vegan of lactosevrij alternatief en perfect als tussengerecht of verfrissend dessert.',
+      'Sorbet bevat geen zuivel of eieren, alleen water, suiker en fruit (puree) of vruchtensap. Door het hoge fruitgehalte is het licht en fris, ideaal als vegan of lactosevrij alternatief en perfect als tussengerecht of verfrissend dessert.',
     kenmerken: [
       'Geen melk of room (dus vetvrij en lactosevrij)',
       'Fris en fruitig',
@@ -334,7 +334,7 @@ export default function IceCreamFacts() {
 
         {/* Bottom note */}
         <p className="text-center text-gray-500 text-[10px] tracking-[0.2em] uppercase mt-10 font-light">
-          Bij IJssalon Italia serveren wij zowel roomijs, gelato als sorbetijs — dagelijks vers bereid in Vaals
+          Bij IJssalon Italia serveren wij zowel roomijs, gelato als sorbetijs - dagelijks vers bereid in Vaals
         </p>
 
       </div>

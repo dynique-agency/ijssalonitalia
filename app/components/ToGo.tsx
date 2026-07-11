@@ -316,7 +316,7 @@ export default function ToGo() {
               <div className="relative h-72 sm:h-80 overflow-hidden">
                 <Image
                   src="/nieuweijscoupe.jpeg"
-                  alt="Choco Berry Coupe — nieuw bij IJssalon Italia Vaals, te bestellen om mee te nemen"
+                  alt="Choco Berry Coupe - nieuw bij IJssalon Italia Vaals, te bestellen om mee te nemen"
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-105 brightness-95 group-hover:brightness-105"
                   quality={90}
@@ -330,7 +330,7 @@ export default function ToGo() {
                   Choco Berry Coupe
                 </h4>
                 <p className="text-gray-400 text-sm font-light leading-relaxed">
-                  Een verwennerij van rijke chocolade en verse bessen — nu verkrijgbaar om mee te nemen.
+                  Een verwennerij van rijke chocolade en verse bessen - nu verkrijgbaar om mee te nemen.
                 </p>
                 <div className="mt-4 flex items-center gap-2">
                   <span className="text-[10px] text-gold/70 tracking-[0.3em] uppercase font-light">To Go beschikbaar</span>

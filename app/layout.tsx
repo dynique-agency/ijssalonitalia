@@ -22,7 +22,7 @@ const inter = Inter({
 const siteUrl = 'https://www.ijssalonitaliavaals.nl'
 
 export const metadata: Metadata = {
-  title: 'IJssalon Italia Vaals — Ambachtelijk ijs & Italiaanse gastvrijheid',
+  title: 'IJssalon Italia Vaals - Ambachtelijk ijs & Italiaanse gastvrijheid',
   description: 'Familiebedrijf sinds 1969 in Vaals. Geniet van meer dan 50 ambachtelijke ijssmaken, Italiaanse koffie en gebak. Dagelijks vers bereid door Wally en Roger.',
   metadataBase: new URL(siteUrl),
   keywords: ['ijssalon', 'Vaals', 'ambachtelijk ijs', 'gelato', 'roomijs', 'sorbet', 'Italiaans', 'ijssalon Italia'],
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     url: siteUrl,
-    title: 'IJssalon Italia Vaals — Ambachtelijk ijs & Italiaanse gastvrijheid',
+    title: 'IJssalon Italia Vaals - Ambachtelijk ijs & Italiaanse gastvrijheid',
     description: 'Familiebedrijf sinds 1969 in Vaals. Meer dan 50 ambachtelijke ijssmaken, Italiaanse koffie en gebak. Dagelijks vers bereid.',
     siteName: 'IJssalon Italia Vaals',
     images: [
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'IJssalon Italia Vaals — Ambachtelijk ijs & Italiaanse gastvrijheid',
+    title: 'IJssalon Italia Vaals - Ambachtelijk ijs & Italiaanse gastvrijheid',
     description: 'Familiebedrijf sinds 1969. Meer dan 50 ambachtelijke ijssmaken in Vaals.',
     images: ['/ijs.webp'],
   },

@@ -15,18 +15,11 @@ const cookieTable = [
     partij: 'Eigen',
   },
   {
-    name: '_ga, _gid',
-    type: 'Analytisch',
-    doel: 'Google Analytics — meet websitegebruik anoniem',
-    duur: '2 jaar / 24 uur',
-    partij: 'Google',
-  },
-  {
-    name: '_fbp',
+    name: 'Google Maps-cookies',
     type: 'Marketing',
-    doel: 'Facebook Pixel — gepersonaliseerde advertenties',
-    duur: '3 maanden',
-    partij: 'Meta',
+    doel: 'Laadt de interactieve kaart bij "Bezoek Ons", alleen na toestemming',
+    duur: 'Variabel',
+    partij: 'Google',
   },
 ]
 
@@ -78,12 +71,12 @@ export default function CookiesPage() {
                 {
                   label: 'Analytisch',
                   color: 'bg-blue-500',
-                  desc: 'Helpen ons begrijpen hoe bezoekers de website gebruiken. Alle gegevens zijn anoniem en geaggregeerd.',
+                  desc: 'Zouden ons helpen begrijpen hoe bezoekers de website gebruiken. Momenteel plaatsen wij geen analytische cookies; deze categorie staat klaar voor toekomstig gebruik.',
                 },
                 {
                   label: 'Marketing',
                   color: 'bg-purple-500',
-                  desc: 'Worden gebruikt om advertenties te personaliseren op externe platforms zoals Meta (Facebook/Instagram).',
+                  desc: 'Worden gebruikt om de interactieve Google Maps-kaart op de website te laden.',
                 },
               ].map((cat) => (
                 <div key={cat.label} className="flex items-start gap-3 p-4 border border-white/10 rounded-xl">
@@ -133,10 +126,9 @@ export default function CookiesPage() {
               {[
                 'Via de cookiebanner onderaan de pagina (verschijnt opnieuw na het wissen van uw browserdata)',
                 'Via de browserinstellingen van uw apparaat',
-                'Via de opt-out pagina\'s van Google Analytics en Meta',
               ].map((item, i) => (
                 <li key={i} className="flex items-start gap-3">
-                  <span className="text-[#c9a84c] mt-1 flex-shrink-0">—</span>
+                  <span className="text-[#c9a84c] mt-1 flex-shrink-0">-</span>
                   <span>{item}</span>
                 </li>
               ))}
@@ -154,11 +146,10 @@ export default function CookiesPage() {
             </p>
             <ul className="list-none mt-3 space-y-2">
               {[
-                { name: 'Google Analytics', url: 'https://policies.google.com/privacy' },
-                { name: 'Meta (Facebook)', url: 'https://www.facebook.com/privacy/policy/' },
+                { name: 'Google', url: 'https://policies.google.com/privacy' },
               ].map((p) => (
                 <li key={p.name} className="flex items-start gap-3">
-                  <span className="text-[#c9a84c] mt-1 flex-shrink-0">—</span>
+                  <span className="text-[#c9a84c] mt-1 flex-shrink-0">-</span>
                   <a href={p.url} target="_blank" rel="noopener noreferrer" className="text-[#c9a84c]/80 hover:text-[#c9a84c] transition-colors underline underline-offset-2">
                     {p.name} privacybeleid
                   </a>

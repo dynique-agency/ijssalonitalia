@@ -70,8 +70,8 @@ export default function VoorwaardenPage() {
           <section>
             <h2 className="font-cormorant text-2xl text-[#c9a84c] font-semibold mb-3">4. Intellectueel eigendom</h2>
             <p>
-              Alle rechten van intellectueel eigendom op de website en de inhoud daarvan — waaronder teksten, afbeeldingen,
-              logo's en vormgeving — berusten bij IJssalon Italia Vaals of haar licentiegevers.
+              Alle rechten van intellectueel eigendom op de website en de inhoud daarvan (waaronder teksten, afbeeldingen,
+              logo's en vormgeving) berusten bij IJssalon Italia Vaals of haar licentiegevers.
               Niets van de website mag worden gekopieerd, opgeslagen of gebruikt zonder uitdrukkelijke schriftelijke toestemming.
             </p>
           </section>

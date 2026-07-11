@@ -15,7 +15,7 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   if (!job) return {}
 
   return {
-    title: `${job.title} — Vacature IJssalon Italia Vaals`,
+    title: `${job.title} - Vacature IJssalon Italia Vaals`,
     description: job.intro,
   }
 }

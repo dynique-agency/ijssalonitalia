@@ -63,12 +63,12 @@ export default function About() {
             <div className="text-center p-6 border-t-2 border-gold">
               <div className="text-gold text-4xl md:text-5xl font-cormorant font-semibold mb-2">50+</div>
               <p className="text-gray-900 font-semibold text-sm uppercase tracking-wider mb-1">Ijssmaken</p>
-              <p className="text-gray-600 text-xs md:text-sm font-light">Dagelijks vers bereid</p>
+              <p className="text-gray-600 text-xs md:text-sm font-light">Wisselend aanbod, dagelijks vers</p>
             </div>
             <div className="text-center p-6 border-t-2 border-gold">
               <div className="text-gold text-4xl md:text-5xl font-cormorant font-semibold mb-2">1969</div>
               <p className="text-gray-900 font-semibold text-sm uppercase tracking-wider mb-1">Opgericht</p>
-              <p className="text-gray-600 text-xs md:text-sm font-light">Meer dan 50 jaar ervaring</p>
+              <p className="text-gray-600 text-xs md:text-sm font-light">Meer dan 55 jaar ervaring</p>
             </div>
             <div className="text-center p-6 border-t-2 border-gold">
               <div className="text-gold text-4xl md:text-5xl font-cormorant font-semibold mb-2">100%</div>

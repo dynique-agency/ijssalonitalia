@@ -89,6 +89,12 @@ export default function IceCream() {
     setOpenSection(openSection === section ? null : section)
   }
 
+  const isSearching = searchQuery.trim() !== ''
+  const hasNoResults = isSearching && filteredMilkFlavors.length === 0 && filteredFruitFlavors.length === 0
+  // While searching, auto-open any section with matches so results are visible without an extra click
+  const isMilkOpen = openSection === 'milk' || (isSearching && filteredMilkFlavors.length > 0)
+  const isFruitOpen = openSection === 'fruit' || (isSearching && filteredFruitFlavors.length > 0)
+
   return (
     <section id="ijssoorten" className="relative py-16 md:py-24 overflow-hidden bg-white">
       {/* Background Pattern */}
@@ -110,8 +116,8 @@ export default function IceCream() {
             <h2 className="font-cormorant text-3xl sm:text-4xl md:text-5xl font-semibold text-black mb-3 md:mb-4 leading-tight">
               Onze IJssmaken
             </h2>
-            <p className="text-gray-600 text-sm md:text-base font-light">
-              50+ ambachtelijke smaken, dagelijks vers bereid
+            <p className="text-gray-600 text-sm md:text-base font-light max-w-lg mx-auto">
+              50+ ambachtelijke smaken, dagelijks vers bereid - het aanbod wisselt en bij drukte kunnen sommige smaken tijdelijk niet beschikbaar zijn
             </p>
           </Reveal>
 
@@ -131,9 +137,21 @@ export default function IceCream() {
             </div>
           </Reveal>
 
+          {/* Zero-results state while searching */}
+          {hasNoResults && (
+            <Reveal className="mb-6 md:mb-8 text-center py-8 px-6 bg-gray-50 rounded-2xl border border-gray-100">
+              <p className="text-black font-cormorant text-xl font-semibold mb-1.5">
+                Geen smaken gevonden voor "{searchQuery}"
+              </p>
+              <p className="text-gray-500 text-sm font-light">
+                Probeer een andere zoekterm, of bekijk hieronder ons volledige aanbod.
+              </p>
+            </Reveal>
+          )}
+
           {/* Accordion Sections */}
           <Reveal delay={140} className="space-y-4">
-            
+
             {/* Roomijs Section */}
             <div className="border border-gray-200 rounded-2xl overflow-hidden bg-white shadow-sm hover:shadow-md transition-shadow duration-300">
               <button
@@ -153,19 +171,19 @@ export default function IceCream() {
                     </p>
                   </div>
                 </div>
-                <svg 
-                  className={`w-5 h-5 md:w-6 md:h-6 text-gold transition-transform duration-300 ${openSection === 'milk' ? 'rotate-180' : ''}`} 
-                  fill="none" 
-                  stroke="currentColor" 
+                <svg
+                  className={`w-5 h-5 md:w-6 md:h-6 text-gold transition-transform duration-300 ${isMilkOpen ? 'rotate-180' : ''}`}
+                  fill="none"
+                  stroke="currentColor"
                   viewBox="0 0 24 24"
                 >
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
-              
-              <div 
+
+              <div
                 className={`transition-all duration-300 overflow-hidden ${
-                  openSection === 'milk' ? 'max-h-[2000px] opacity-100' : 'max-h-0 opacity-0'
+                  isMilkOpen ? 'max-h-[2000px] opacity-100' : 'max-h-0 opacity-0'
                 }`}
               >
                 <div className="px-6 md:px-8 py-5 md:py-6 bg-gray-50/50">
@@ -214,19 +232,19 @@ export default function IceCream() {
                     </p>
                   </div>
                 </div>
-                <svg 
-                  className={`w-5 h-5 md:w-6 md:h-6 text-gold transition-transform duration-300 ${openSection === 'fruit' ? 'rotate-180' : ''}`} 
-                  fill="none" 
-                  stroke="currentColor" 
+                <svg
+                  className={`w-5 h-5 md:w-6 md:h-6 text-gold transition-transform duration-300 ${isFruitOpen ? 'rotate-180' : ''}`}
+                  fill="none"
+                  stroke="currentColor"
                   viewBox="0 0 24 24"
                 >
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
-              
-              <div 
+
+              <div
                 className={`transition-all duration-300 overflow-hidden ${
-                  openSection === 'fruit' ? 'max-h-[2000px] opacity-100' : 'max-h-0 opacity-0'
+                  isFruitOpen ? 'max-h-[2000px] opacity-100' : 'max-h-0 opacity-0'
                 }`}
               >
                 <div className="px-6 md:px-8 py-5 md:py-6 bg-gray-50/50">

@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { useEffect, useRef } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
@@ -129,7 +130,7 @@ export default function VacaturesSection() {
       <div className="absolute bottom-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-gold/30 to-transparent" />
 
       <div className="container mx-auto px-4 md:px-8 lg:px-12 relative z-10">
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-6xl mx-auto">
 
           {/* Header */}
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-16 md:mb-20 pb-8 md:pb-10 border-b border-white/10">
@@ -147,49 +148,61 @@ export default function VacaturesSection() {
           </div>
 
           {/* Job cards */}
-          <div className="grid md:grid-cols-2 gap-6 md:gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-7">
             {vacatures.map((job, i) => (
               <Link
                 key={job.slug}
                 href={`/vacatures/${job.slug}/`}
                 ref={el => { cardRefs.current[i] = el }}
-                className="press group relative rounded-2xl border border-white/10 bg-white/[0.03] hover:bg-white/[0.05] hover:border-gold/30 transition-[background-color,border-color,transform] duration-500 px-7 md:px-9 py-8 md:py-10 opacity-0 flex flex-col"
+                className="press group relative rounded-2xl border border-white/10 bg-white/[0.03] hover:bg-white/[0.05] hover:border-gold/30 transition-[background-color,border-color,transform] duration-500 overflow-hidden opacity-0 flex flex-col"
               >
-                {/* Ghost index number */}
-                <span
-                  ref={el => { numberRefs.current[i] = el }}
-                  className="absolute top-6 right-7 md:right-9 font-cormorant font-light text-gold/15 leading-none select-none opacity-0"
-                  style={{ fontSize: 'clamp(48px, 5vw, 64px)' }}
-                >
-                  {String(i + 1).padStart(2, '0')}
-                </span>
+                {/* Photo */}
+                <div className="relative h-40 md:h-44 overflow-hidden flex-shrink-0">
+                  <Image
+                    src={job.heroImage}
+                    alt={`Werken bij IJssalon Italia Vaals - ${job.title}`}
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    quality={85}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-black/10 to-black/20" />
 
-                <div className="mb-5">
-                  <span className="inline-flex items-center gap-2 text-[10px] md:text-xs uppercase tracking-[0.25em] text-gold/70 font-medium border border-gold/25 rounded-full px-3 py-1.5">
+                  <span
+                    ref={el => { numberRefs.current[i] = el }}
+                    className="absolute top-3 right-4 font-cormorant font-light text-white/40 leading-none select-none opacity-0"
+                    style={{ fontSize: 'clamp(34px, 3.5vw, 44px)' }}
+                  >
+                    {String(i + 1).padStart(2, '0')}
+                  </span>
+
+                  <span className="absolute bottom-3.5 left-4 inline-flex items-center gap-2 text-[10px] md:text-xs uppercase tracking-[0.25em] text-gold font-medium border border-gold/40 bg-black/40 backdrop-blur-sm rounded-full px-3 py-1.5">
                     {job.hoursLabel}
                   </span>
                 </div>
 
-                <h3 className="font-cormorant text-2xl md:text-3xl font-semibold text-white mb-3 pr-16 group-hover:text-gold transition-colors duration-500 leading-tight">
-                  {job.title}
-                </h3>
+                <div className="px-6 md:px-7 pt-6 pb-7 md:pb-8 flex flex-col flex-1">
+                  <h3 className="font-cormorant text-xl md:text-2xl font-semibold text-white mb-3 group-hover:text-gold transition-colors duration-500 leading-tight">
+                    {job.title}
+                  </h3>
 
-                <p className="text-gray-400 text-sm md:text-base font-light leading-relaxed mb-8 flex-1">
-                  {job.intro}
-                </p>
+                  <p className="text-gray-400 text-sm font-light leading-relaxed mb-7 flex-1">
+                    {job.intro}
+                  </p>
 
-                <div className="flex items-center gap-3 text-white text-xs md:text-sm font-semibold tracking-wide uppercase">
-                  <span className="border-b border-gold/40 group-hover:border-gold pb-1 transition-colors duration-300">
-                    Bekijk vacature
-                  </span>
-                  <svg
-                    className="w-4 h-4 text-gold transition-transform duration-300 group-hover:translate-x-1.5"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
+                  <div className="flex items-center gap-3 text-white text-xs md:text-sm font-semibold tracking-wide uppercase">
+                    <span className="border-b border-gold/40 group-hover:border-gold pb-1 transition-colors duration-300">
+                      Bekijk vacature
+                    </span>
+                    <svg
+                      className="w-4 h-4 text-gold transition-transform duration-300 group-hover:translate-x-1.5"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                  </div>
                 </div>
               </Link>
             ))}

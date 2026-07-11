@@ -81,7 +81,7 @@ const newsItems = [
     tag: 'Nieuwe coupe',
     title: 'Choco Berry Coupe',
     description:
-      'Een verwennerij van rijke chocolade en verse bessen — nu ook verkrijgbaar om mee te nemen.',
+      'Een verwennerij van rijke chocolade en verse bessen - nu ook verkrijgbaar om mee te nemen.',
   },
 ]
 

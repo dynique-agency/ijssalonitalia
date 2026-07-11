@@ -87,7 +87,10 @@ function AnimatedBlock({ children, delay = 0, className = '' }: { children: Reac
   return <div ref={ref} className={`opacity-0 ${className}`}>{children}</div>
 }
 
-function ListBlock({ title, items, index }: { title: string; items: string[]; index: string }) {
+const CHECK_ICON = 'M5 13l4 4L19 7'
+const HEART_ICON = 'M11.645 20.91l-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z'
+
+function ListBlock({ title, items, index, icon = CHECK_ICON }: { title: string; items: string[]; index: string; icon?: string }) {
   return (
     <AnimatedBlock>
       <div className="py-9 md:py-11 border-b border-white/10">
@@ -107,11 +110,11 @@ function ListBlock({ title, items, index }: { title: string; items: string[]; in
                 <li key={i} className="flex items-start gap-3.5">
                   <svg
                     className="w-4 h-4 text-gold flex-shrink-0 mt-1"
-                    fill="none"
+                    fill={icon === HEART_ICON ? 'currentColor' : 'none'}
                     stroke="currentColor"
                     viewBox="0 0 24 24"
                   >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.75} d="M5 13l4 4L19 7" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.75} d={icon} />
                   </svg>
                   <span className="text-gray-400 text-sm md:text-base font-light leading-relaxed">
                     {item}
@@ -158,7 +161,7 @@ export default function VacatureDetailClient({ job }: { job: Vacature }) {
       <div className="relative h-[46vh] md:h-[58vh] w-full overflow-hidden">
         <Image
           src={job.heroImage}
-          alt={`Werken bij IJssalon Italia Vaals — ${job.title}`}
+          alt={`Werken bij IJssalon Italia Vaals - ${job.title}`}
           fill
           priority
           className="object-cover scale-105"
@@ -225,7 +228,7 @@ export default function VacatureDetailClient({ job }: { job: Vacature }) {
               <div className="relative rounded-2xl overflow-hidden h-56 md:h-72">
                 <Image
                   src="/koffiemetapfelstrudel.webp"
-                  alt="Sfeerbeeld van IJssalon Italia Vaals — Italiaanse gastvrijheid"
+                  alt="Sfeerbeeld van IJssalon Italia Vaals - Italiaanse gastvrijheid"
                   fill
                   className="object-cover"
                   quality={85}
@@ -233,14 +236,29 @@ export default function VacatureDetailClient({ job }: { job: Vacature }) {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                 <div className="absolute bottom-5 left-6 right-6">
                   <p className="text-white font-cormorant text-lg md:text-xl font-medium">
-                    Familiebedrijf sinds 1969 — Italiaanse gastvrijheid in het hart van Vaals
+                    Familiebedrijf sinds 1969 - Italiaanse gastvrijheid in het hart van Vaals
                   </p>
                 </div>
               </div>
             </AnimatedBlock>
 
             <ListBlock title="Wie zoeken wij?" items={job.requirements} index="02" />
-            <ListBlock title="Wat bieden wij jou?" items={job.offers} index="03" />
+            <ListBlock title="Wat bieden wij jou?" items={job.offers} index="03" icon={HEART_ICON} />
+
+            {/* Warm word from the owners */}
+            <AnimatedBlock className="py-9 md:py-11">
+              <div className="relative bg-gradient-to-br from-gold/10 to-gold/5 border border-gold/20 rounded-2xl p-6 md:p-8">
+                <svg className="w-7 h-7 text-gold/25 mb-3" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M9.983 3v7.391c0 5.704-3.731 9.57-8.983 10.609l-.995-2.151c2.432-.917 3.995-3.638 3.995-5.849h-4v-10h9.983zm14.017 0v7.391c0 5.704-3.748 9.571-9 10.609l-.996-2.151c2.433-.917 3.996-3.638 3.996-5.849h-3.983v-10h9.983z" />
+                </svg>
+                <p className="text-gray-200 text-base md:text-lg leading-relaxed italic font-light mb-3">
+                  "We zoeken geen nummer, maar iemand die net zoveel plezier haalt uit een tevreden gast als wij. Voel je je thuis bij ons verhaal? Dan hoor je vanzelf snel van ons."
+                </p>
+                <p className="text-gold font-semibold text-sm">
+                  - Wally en Roger
+                </p>
+              </div>
+            </AnimatedBlock>
 
             {/* Apply CTA */}
             <AnimatedBlock delay={0.1}>

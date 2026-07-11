@@ -64,7 +64,7 @@ export default function PrivacyPage() {
                 'IP-adres en browserinformatie via websitebezoek',
               ].map((item, i) => (
                 <li key={i} className="flex items-start gap-3">
-                  <span className="text-[#c9a84c] mt-1 flex-shrink-0">—</span>
+                  <span className="text-[#c9a84c] mt-1 flex-shrink-0">-</span>
                   <span>{item}</span>
                 </li>
               ))}
@@ -81,7 +81,7 @@ export default function PrivacyPage() {
                 'Voldoen aan wettelijke verplichtingen',
               ].map((item, i) => (
                 <li key={i} className="flex items-start gap-3">
-                  <span className="text-[#c9a84c] mt-1 flex-shrink-0">—</span>
+                  <span className="text-[#c9a84c] mt-1 flex-shrink-0">-</span>
                   <span>{item}</span>
                 </li>
               ))}
@@ -95,12 +95,12 @@ export default function PrivacyPage() {
             </p>
             <ul className="list-none mt-3 space-y-2">
               {[
-                'Toestemming — voor analytische en marketingcookies',
-                'Gerechtvaardigd belang — voor het beantwoorden van uw vragen',
-                'Wettelijke verplichting — waar de wet dit vereist',
+                'Toestemming - voor analytische en marketingcookies',
+                'Gerechtvaardigd belang - voor het beantwoorden van uw vragen',
+                'Wettelijke verplichting - waar de wet dit vereist',
               ].map((item, i) => (
                 <li key={i} className="flex items-start gap-3">
-                  <span className="text-[#c9a84c] mt-1 flex-shrink-0">—</span>
+                  <span className="text-[#c9a84c] mt-1 flex-shrink-0">-</span>
                   <span>{item}</span>
                 </li>
               ))}
@@ -126,7 +126,7 @@ export default function PrivacyPage() {
                 'Overheidsinstanties indien wettelijk verplicht',
               ].map((item, i) => (
                 <li key={i} className="flex items-start gap-3">
-                  <span className="text-[#c9a84c] mt-1 flex-shrink-0">—</span>
+                  <span className="text-[#c9a84c] mt-1 flex-shrink-0">-</span>
                   <span>{item}</span>
                 </li>
               ))}
@@ -141,15 +141,15 @@ export default function PrivacyPage() {
             <p>Op grond van de AVG heeft u de volgende rechten:</p>
             <ul className="list-none mt-3 space-y-2">
               {[
-                'Recht op inzage — u mag opvragen welke gegevens wij van u verwerken',
-                'Recht op rectificatie — u mag onjuiste gegevens laten corrigeren',
-                'Recht op vergetelheid — u mag verzoeken uw gegevens te laten verwijderen',
-                'Recht op beperking — u mag de verwerking (tijdelijk) laten beperken',
-                'Recht op gegevensoverdraagbaarheid — u mag uw gegevens in een leesbaar formaat ontvangen',
-                'Recht van bezwaar — u mag bezwaar maken tegen bepaalde verwerkingen',
+                'Recht op inzage - u mag opvragen welke gegevens wij van u verwerken',
+                'Recht op rectificatie - u mag onjuiste gegevens laten corrigeren',
+                'Recht op vergetelheid - u mag verzoeken uw gegevens te laten verwijderen',
+                'Recht op beperking - u mag de verwerking (tijdelijk) laten beperken',
+                'Recht op gegevensoverdraagbaarheid - u mag uw gegevens in een leesbaar formaat ontvangen',
+                'Recht van bezwaar - u mag bezwaar maken tegen bepaalde verwerkingen',
               ].map((item, i) => (
                 <li key={i} className="flex items-start gap-3">
-                  <span className="text-[#c9a84c] mt-1 flex-shrink-0">—</span>
+                  <span className="text-[#c9a84c] mt-1 flex-shrink-0">-</span>
                   <span>{item}</span>
                 </li>
               ))}

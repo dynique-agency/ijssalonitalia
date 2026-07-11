@@ -15,7 +15,7 @@ export default function History() {
             </h2>
             <div className="w-16 h-px bg-gold mx-auto mb-4 md:mb-6"></div>
             <p className="text-gray-700 text-base md:text-lg font-light">
-              Meer dan 50 jaar passie voor ijs en gastvrijheid
+              Meer dan 55 jaar passie voor ijs en gastvrijheid
             </p>
           </Reveal>
 
@@ -52,17 +52,20 @@ export default function History() {
                 </p>
               </div>
 
-              <div className="bg-gradient-to-br from-gold/10 to-gold/5 border-l-4 border-gold rounded-r-xl p-6">
+              <div className="relative bg-gradient-to-br from-gold/10 to-gold/5 border border-gold/20 rounded-2xl p-6">
+                <svg className="w-7 h-7 text-gold/25 mb-2" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M9.983 3v7.391c0 5.704-3.731 9.57-8.983 10.609l-.995-2.151c2.432-.917 3.995-3.638 3.995-5.849h-4v-10h9.983zm14.017 0v7.391c0 5.704-3.748 9.571-9 10.609l-.996-2.151c2.433-.917 3.996-3.638 3.996-5.849h-3.983v-10h9.983z" />
+                </svg>
                 <p className="text-gray-800 text-base md:text-lg leading-relaxed italic font-light mb-3">
                   "In 2003 namen wij, Wally en Roger, het stokje over. We zijn trots om deze mooie traditie voort te zetten, met dezelfde toewijding en passie."
                 </p>
                 <p className="text-gold font-semibold text-sm">
-                  — Wally en Roger
+                  - Wally en Roger
                 </p>
               </div>
 
               <p className="text-gray-700 text-base md:text-lg leading-relaxed font-light">
-                Vandaag, meer dan 50 jaar later, blijven we trouw aan onze roots. Ons ijs wordt nog steeds dagelijks vers bereid, met dezelfde liefde en zorg als in 1969.
+                Vandaag, meer dan 55 jaar later, blijven we trouw aan onze roots. Ons ijs wordt nog steeds dagelijks vers bereid, met dezelfde liefde en zorg als in 1969.
               </p>
             </Reveal>
           </div>
