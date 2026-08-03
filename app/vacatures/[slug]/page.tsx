@@ -10,8 +10,9 @@ export function generateStaticParams() {
   return vacatures.map(job => ({ slug: job.slug }))
 }
 
-export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
-  const job = getVacatureBySlug(params.slug)
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params
+  const job = getVacatureBySlug(slug)
   if (!job) return {}
 
   return {
@@ -20,8 +21,9 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   }
 }
 
-export default function VacaturePage({ params }: { params: { slug: string } }) {
-  const job = getVacatureBySlug(params.slug)
+export default async function VacaturePage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params
+  const job = getVacatureBySlug(slug)
   if (!job) notFound()
 
   const jobPostingJsonLd = {

@@ -1,5 +1,7 @@
 import { MetadataRoute } from 'next'
 
+export const dynamic = 'force-static'
+
 const siteUrl = 'https://www.ijssalonitaliavaals.nl'
 
 export default function sitemap(): MetadataRoute.Sitemap {

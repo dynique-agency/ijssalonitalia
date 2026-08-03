@@ -70,6 +70,13 @@ function TitleReveal({ text, className }: { text: string; className?: string }) 
 
 const newsItems = [
   {
+    date: '3 augustus 2026',
+    tag: 'Op het terras',
+    title: 'Cocktails & alcoholvrije cocktails',
+    description:
+      'Geniet op ons terras van heerlijke cocktails - en met net zoveel zorg gemaakte alcoholvrije varianten, ook lekker voor wie liever geen alcohol drinkt.',
+  },
+  {
     date: '1 juli 2026',
     tag: 'Nieuwe smaken',
     title: 'Drie gloednieuwe ijssmaken',
