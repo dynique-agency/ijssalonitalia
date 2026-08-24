@@ -35,7 +35,7 @@ export default function PrivacyPage() {
           <section>
             <h2 className="font-cormorant text-2xl text-[#c9a84c] font-semibold mb-3">1. Wie zijn wij?</h2>
             <p>
-              IJssalon Italia Vaals is een eenmanszaak gevestigd aan de Maastrichterlaan 26, 6291 ES Vaals, Nederland.
+              IJssalon Italia Vaals is een familiebedrijf gevestigd aan de Maastrichterlaan 26, 6291 ES Vaals, Nederland.
               Wij zijn verantwoordelijk voor de verwerking van persoonsgegevens zoals beschreven in dit privacybeleid.
             </p>
             <div className="mt-3 p-4 border border-white/10 rounded-xl text-sm space-y-1">
