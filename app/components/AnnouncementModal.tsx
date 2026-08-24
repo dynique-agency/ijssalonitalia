@@ -93,10 +93,10 @@ export default function AnnouncementModal() {
 
               {/* Title */}
               <h2 className="font-cormorant text-[28px] leading-[1.1] sm:text-3xl md:text-4xl font-semibold text-white sm:leading-tight mb-2.5 sm:mb-3 pr-10 sm:pr-0" style={{ textWrap: 'balance' }}>
-                Goed nieuws! <span className="text-[#c9a84c]">Vanaf de zomer</span>
+                Goed nieuws! <span className="text-[#c9a84c]">Vanaf september</span>
               </h2>
               <p className="text-gray-400 text-sm leading-relaxed font-light">
-                We hebben onze openingstijden en service aangepast zodat jullie optimaal kunnen genieten van al ons lekkers. Of je nu uitgebreid wilt zitten of snel iets wilt ophalen, we staan voor je klaar!
+                Vanaf september gelden aangepaste openingstijden. Of je nu uitgebreid wilt zitten of 's avonds nog iets wilt ophalen, we staan voor je klaar!
               </p>
             </div>
           </div>
@@ -104,7 +104,7 @@ export default function AnnouncementModal() {
           {/* Hours card — matches the "Zomer" grouped-card pattern used elsewhere on the site */}
           <div className="mx-5 sm:mx-7 mb-4 sm:mb-5 rounded-2xl overflow-hidden border border-[#c9a84c]/20">
             <div className="grid grid-cols-2 divide-x divide-[#c9a84c]/10">
-              {/* Service aan tafel — pistachio accent */}
+              {/* Bediening aan tafel — pistachio accent */}
               <div className="p-3.5 sm:p-4">
                 <div className="w-8 h-8 rounded-full flex items-center justify-center mb-2.5" style={{ background: '#A8C87022' }}>
                   <svg className="w-4 h-4" style={{ color: '#A8C870' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -112,11 +112,11 @@ export default function AnnouncementModal() {
                   </svg>
                 </div>
                 <p className="text-white text-xs sm:text-sm font-medium mb-1">Bediening aan tafel</p>
-                <p className="font-cormorant text-lg sm:text-xl font-semibold leading-none" style={{ color: '#A8C870' }}>tot 19:00</p>
-                <p className="text-gray-500 text-[11px] sm:text-xs mt-1.5 leading-relaxed">Met liefde bediend aan tafel.</p>
+                <p className="font-cormorant text-lg sm:text-xl font-semibold leading-none" style={{ color: '#A8C870' }}>10:00–18:00</p>
+                <p className="text-gray-500 text-[11px] sm:text-xs mt-1.5 leading-relaxed">Dinsdag t/m zondag. Op maandag vanaf 11:00.</p>
               </div>
 
-              {/* Take-away — strawberry accent */}
+              {/* Afhalen — strawberry accent */}
               <div className="p-3.5 sm:p-4">
                 <div className="w-8 h-8 rounded-full flex items-center justify-center mb-2.5" style={{ background: '#E8927C22' }}>
                   <svg className="w-4 h-4" style={{ color: '#E8927C' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -124,17 +124,17 @@ export default function AnnouncementModal() {
                   </svg>
                 </div>
                 <p className="text-white text-xs sm:text-sm font-medium mb-1">Alleen meenemen</p>
-                <p className="font-cormorant text-lg sm:text-xl font-semibold leading-none" style={{ color: '#E8927C' }}>19:00–21:45</p>
-                <p className="text-gray-500 text-[11px] sm:text-xs mt-1.5 leading-relaxed">Uitsluitend afhaal.</p>
+                <p className="font-cormorant text-lg sm:text-xl font-semibold leading-none" style={{ color: '#E8927C' }}>18:00–21:00</p>
+                <p className="text-gray-500 text-[11px] sm:text-xs mt-1.5 leading-relaxed">Elke dag van de week.</p>
               </div>
             </div>
 
-            {/* Laatste bestelling — folded into the same card as a footer strip */}
+            {/* Weersafhankelijk — folded into the same card as a footer strip */}
             <div className="flex items-center justify-center gap-2 px-4 py-2.5 sm:py-3 bg-[#c9a84c]/10 border-t border-[#c9a84c]/15">
               <svg className="w-3.5 h-3.5 text-[#c9a84c] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
               </svg>
-              <p className="text-[#c9a84c] font-semibold text-xs sm:text-sm tracking-wide">Laatste bestelling om 18:30 uur</p>
+              <p className="text-[#c9a84c] font-semibold text-xs sm:text-sm tracking-wide">Openingstijden zijn weersafhankelijk</p>
             </div>
           </div>
 
@@ -156,7 +156,7 @@ export default function AnnouncementModal() {
               <svg className="w-3.5 h-3.5 text-gray-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.75} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
               </svg>
-              <p className="text-gray-500 text-xs text-center sm:text-left">Op maandag openen we om <span className="text-gray-300">11:00 uur</span></p>
+              <p className="text-gray-500 text-xs text-center sm:text-left">Deze tijden gelden <span className="text-gray-300">vanaf september</span></p>
             </div>
 
             <button
